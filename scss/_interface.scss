@@ -1,0 +1,367 @@
+// Tables.
+table {
+    td,
+    th {
+        border: 0;
+    }
+}
+// Hidden course warning.
+.alert.hiddencourse {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+// Footer
+@include media-breakpoint-up(md) {
+    .pagelayout-standard,
+    body.limitedwidth {
+        #page.drawers {
+            .footer-popover {
+                max-width: 100%;
+                margin: 0 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    // Add some padding for the drawer toggle buttons
+    #page.drawers {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #page.drawers {
+        &.show-drawer-left {
+            padding-left: 0;
+        }
+        &.show-drawer-right {
+            padding-right: 0;
+        }
+    }
+}
+// Footer.
+footer {
+    .footer-credits {
+        background-color: $primary;
+        font-size: 0.85rem;
+        a {
+            color: $white;
+        }
+    }
+
+    .stream-footer {
+        padding-top: 4rem;
+        background-color: $gray-700;
+
+        .socialmedia {
+            margin-top: 3rem;
+            border-top: 1px solid $primary;
+
+            .fa {
+                padding: 20px;
+                font-size: 20px;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+        a:hover {
+            color: $primary;
+        }
+        h5 {
+            text-transform: uppercase;
+        }
+    }
+
+    .support-column {
+        border-top: solid 1px $primary;
+    }
+}
+
+// Fixes a horizontal scrollbar when showing only single section.
+.course-content .single-section .section-navigation {
+    margin-bottom: 0;
+}
+
+// Login Page.
+.pagelayout-login {
+    .login-container {
+        box-shadow: none;
+        padding-top: 1.5rem;
+        .action-menu-trigger a {
+            margin: 0;
+        }
+    }
+    #page {
+        margin-top: 0;
+        background-image: none;
+        background-color: $white;
+    }
+    #login {
+        input,
+        button {
+            width: 100%;
+        }
+    }
+    // Toogle password icon position.
+    .login-form-password {
+        position: relative;
+        .fa {
+            position: absolute;
+            right: 0.5rem;
+            top: 0.7rem;
+            cursor: pointer;
+        }
+    }
+    .login-image img {
+        object-fit: cover;
+        object-position: left;
+    }
+    .login-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 30px; /* Set the fixed height of the footer here */
+        line-height: 30px; /* Vertically center the text there */
+        background-color: #00000075;
+        color: $gray-300;
+    }
+}
+// Header.
+header {
+    .page-header-headings > h1 {
+        margin-bottom: 0;
+    }
+    .course-head {
+        height: 10rem;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 6px;
+        .singlebutton {
+            margin-right: $spacer * 1;
+        }
+        .header-actions-container {
+            margin-right: 1rem;
+        }
+    }
+    .page-context-header {
+        // Same spacing as bootstrap ml-4.
+        margin-left: $spacer * 1;
+        margin-top: $spacer * 1;
+        padding: 5px 15px 5px 15px;
+        background: $primary;
+        border-radius: 6px;
+        color: $white;
+        a {
+            color: $white;
+        }
+        // Fixes user own pages because of img size.
+        .userinitials.size-100 {
+            width: 60px;
+            height: 60px;
+            font-size: 1.6rem;
+        }
+    }
+    ol.breadcrumb {
+        margin-left: $spacer * 1;
+    }
+    .breadcrumb {
+        margin-top: 0.6rem;
+        padding: 10px 15px 10px 15px;
+        color: $white;
+        border-radius: 6px;
+        // Hidden elements. Fixes contrast ratio.
+        .dimmed,
+        a.dimmed,
+        a.dimmed:link,
+        a.dimmed:visited,
+        a.dimmed_text,
+        a.dimmed_text:link,
+        a.dimmed_text:visited,
+        .dimmed_text,
+        .dimmed_text a,
+        .dimmed_text a:link,
+        .dimmed_text a:visited {
+            color: $gray-300;
+        }
+
+    }
+}
+// Fixes courses deck width on the dashboard and my courses.
+.dashboard-card-deck:not(.fixed-width-cards) {
+    @media (min-width: 840px) {
+        .dashboard-card {
+            width: calc(25% - #{$card-gutter});
+        }
+    }
+}
+// Back to top button.
+
+#back-to-top {
+    /* Hide the back to top icon initially. It will be unhidden by JS only. */
+    display: none;
+    /* Place the back to top button at a fixed place. */
+    position: fixed;
+    right: 2rem;
+    /* As a start = on really small screens, the back to top button is shown in the bottom right corner. */
+    bottom: 2rem;
+
+    /* On larger screens, there is the footer button already in the bottom right corner and
+       the back to top button has to be shown above of the footer button. */
+    @include media-breakpoint-up(sm) {
+        bottom: 5rem;
+    }
+
+    /* Make sure that the back to top button is not covered by anything else. */
+    z-index: $zindex-dropdown;
+    /* Animate position together with footer button. */
+    transition: right 0.2s;
+}
+
+#back-to-top i::before {
+    /* Move the caret icon slightly up for a nicer look. */
+    vertical-align: 0.3rem;
+}
+#page.drawers {
+    &.show-drawer-right #back-to-top {
+        /* Move the back to top button when right drawer is shown. */
+        right: calc(#{$drawer-right-width} + 2rem);
+    }
+}
+
+// Corrects letters pagination.
+.pagination {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/****************************Frontpage****/
+#page.homepage {
+    scrollbar-width: thin;
+    scrollbar-color: #6a737b #f8f9fa;
+    position: relative;
+    overflow-y: auto;
+    transition: 0.2s;
+    height: calc(100vh - 60px);
+    left: 0;
+    right: 0;
+    .jumbotron {
+        color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+        @media (min-width: 992px) {
+            height: 500px;
+        }
+        .overlay {
+            width: 93%;
+            height: 100%;
+            background: #0000007a;
+            margin: 0 auto;
+        }
+        .container {
+            position: relative;
+            top: 20%;
+            p,
+            button {
+                margin-top: 2rem;
+            }
+        }
+    }
+    .widgets {
+        .widget-header {
+            color: $secondary;
+            i {
+                font-size: 1.4rem;
+            }
+            p {
+                color: $gray-600;
+                font-weight: 800;
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
+    .widget-catwidget {
+        .card {
+            border: none;
+            transition: all 0.3s;
+            .total-courses {
+                opacity: 0;
+                top: 38%;
+                position: relative;
+                transition: opacity 0.5s;
+            }
+            img {
+                border-radius: 6px;
+                transition: all ease-in-out 0.4s;
+            }
+        }
+        .card:hover {
+            transform: translateY(-15px);
+            .total-courses {
+                opacity: 1;
+                transition: opacity 1s;
+            }
+        }
+        .card-img-overlay {
+            background: rgba(41, 137, 118, 0.199);
+        }
+        .card-title {
+            position: relative;
+            top: 35%;
+        }
+    }
+    .widget-promobox {
+        background-color: $gray-100;
+        color: $gray-700;
+        .promobox-left button {
+            margin: auto;
+            display: block;
+        }
+    }
+    .widget-featuredcourses {
+        .card {
+            border: solid 1px $secondary;
+            background-color: $gray-100;
+            min-height: 375px;
+            .card-img-top {
+                height: 150px;
+                object-fit: cover;
+            }
+            .cat {
+                background-color: $secondary;
+                position: absolute;
+                top: 10px;
+                border-radius: 3px;
+                font-size: smaller;
+            }
+            .available-soon {
+                background-color: #4e4637;
+                position: absolute;
+                right: 0;
+                top: 112px;
+                border-radius: 3px;
+                font-size: smaller;
+            }
+            .rating,
+            .start-date {
+                font-size: 0.8rem;
+                position: absolute;
+                bottom: 10px;
+            }
+            .start-date {
+                right: 10px;
+                color: $gray-800;
+            }
+        }
+    }
+}

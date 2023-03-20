@@ -1,0 +1,75 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_stream/widget_featured_courses
+
+    This template renders the widget featured courses.
+
+    Example context (json):
+    {
+        "featuredcourses": "Featured courses",
+        "featuredcoursescopy": "Best courses",
+        "category": "Category name",
+        "fullname": "Image alt text",
+        "rating": "<p>html rating</p>",
+        "welcomemessage": "welcomemessage",
+        "img": "path",
+        "hidden": "Available soon",
+        "summary": "Lorem ipsum text",
+        "tags": "<p>Tag</p>",
+        "startdate": "30 September 2019",
+        "nofeaturedcourses": false
+    }
+}}
+<div class="container">
+    <div class="row">
+      <div class="widget-header col-lg-4">
+          <h2 class="h3 mt-4"><i class="fa fa-book" aria-hidden="true"></i>
+          {{#str}}featuredcourses , theme_stream{{/str}}</h2>
+          <p class="copy mb-4">{{#str}}featuredcoursescopy , theme_stream{{/str}}
+          </p>
+      </div>
+  </div>
+    <div class="row mt-4">
+        {{#featuredcourses}}
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{img}}" alt="{{fullname}}">
+            {{#category}}<span class="cat text-white p-1">{{category}}</span>{{/category}}
+
+            {{#rating}}<div class="rating pl-1">{{{rating}}}</div>{{/rating}}
+            {{#hidden}}<span class="available-soon text-white p-1">{{hidden}}</span>{{/hidden}}
+            <div class="card-body">
+              <h5 class="card-title h5 text-md-center"><a href="course/view.php?id={{id}}">{{fullname}}</a></h5>
+              <p class="card-text">{{#shortentext}} 100, {{{summary}}} {{/shortentext}}</p>
+              {{{tags}}}
+              <div class="d-flex justify-content-between align-items-center">
+                {{#startdate}}
+                <div class="start-date pr-1"><span class="fa fa-calendar" role="img" aria-label="calendar"></span>
+                    {{#userdate}} {{startdate}}, {{#str}} strftimedate, core_langconfig {{/str}} {{/userdate}}
+                </div>
+                {{/startdate}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/featuredcourses}}
+        {{#nofeaturedcourses}}
+          <p>{{#str}}noresults , theme_stream{{/str}}</p>
+        {{/nofeaturedcourses}}
+    </div>
+  </div>

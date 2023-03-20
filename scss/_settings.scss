@@ -1,0 +1,26 @@
+// SCSS rules read from the theme settings.
+
+/*****************Course main page*********************/
+// Print Circle Mod icons in the course and activity chooser.
+$circlemodicons: 0 !default;
+
+@if $circlemodicons == 1 {
+    .activityiconcontainer {
+        border-radius: 90px;
+    }
+}
+
+// Activity icons path.
+$strongicons: 0 !default;
+
+@if $strongicons == 1 {
+    @each $type, $value in $activity-icon-colors {
+        .activityiconcontainer.#{$type} {
+            background-color: $value;
+            .activityicon,
+            .icon {
+                filter: brightness(0) invert(0);
+            }
+        }
+    }
+}

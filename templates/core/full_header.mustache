@@ -1,0 +1,80 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core/full_header
+
+    This template renders the header.
+
+    Example context (json):
+    {
+        "contextheader": "context_header_html",
+        "settingsmenu": "settings_html",
+        "hasnavbar": false,
+        "navbar": "navbar_if_available",
+        "courseheader": "course_header_html",
+        "welcomemessage": "welcomemessage",
+        "image": "path",
+        "hascompletion": true,
+        "completionrate": 50
+    }
+}}
+<header id="page-header" class="header-maxwidth d-print-none">
+    <div class="w-100">
+        <div class="course-head mb-2" style="background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('{{{image}}}');">
+            <div class="d-flex flex-wrap course-head-action">
+                <div id="course-header">
+                    {{{courseheader}}}
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                {{^welcomemessage}}
+                    {{#contextheader}}
+                        <div class="mr-auto">
+                            {{{contextheader}}}
+                        </div>
+                    {{/contextheader}}
+                {{/welcomemessage}}
+                <div class="welcome ml-2 mt-2">
+                    {{> core/welcome }}
+                </div>
+                <div class="header-actions-container ml-auto" data-region="header-actions-container">
+                    {{#headeractions}}
+                        <div class="header-action ml-2">{{{.}}}</div>
+                    {{/headeractions}}
+                </div>
+                {{! Course completion progress }}
+                {{#hascompletion}}
+                <div class="wrap-circles completion-meter" role="meter" aria-label="{{#str}}coursecompletion, completion{{/str}}"
+                aria-valuenow="{{completionrate}}" aria-valuemin="0" aria-valuemax="100">
+                <span class="m-1 p-2 text-info bg-light">{{#str}}coursecompletion, completion{{/str}}</span>
+                    <div class="mt-1 circle per-{{completionrate}}">
+                      <div class="inner">{{completionrate}}%</div>
+                    </div>
+                </div>
+                {{/hascompletion}}
+                {{{pageheadingbutton}}}
+            </div>
+            {{#hasnavbar}}
+            <div class="d-flex flex-wrap">
+                <div id="page-navbar">
+                    {{{navbar}}}
+                </div>
+            </div>
+            {{/hasnavbar}}
+        </div>
+    </div>
+</header>

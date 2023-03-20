@@ -1,0 +1,64 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_stream/widget_course_categories
+
+    This template renders the widget featured courses catergories.
+
+    Example context (json):
+    {
+        "featuredcategories": "Featured courses categories",
+        "featuredcategoriescopy": "Best courses categories",
+        "category": "Category name",
+        "name": "Amazing category",
+        "coursecountstring": "courses",
+        "nocategory": false,
+        "imgurl": "image.jpg",
+        "id": 5,
+        "total": 6
+    }
+}}
+<div class="container">
+    <div class="row">
+    <div class="widget-header col-lg-4">
+        <h2 class="h3 mt-4"><i class="fa fa-tags" aria-hidden="true"></i>
+        {{#str}}featuredcategories , theme_stream{{/str}}</h2>
+        <p class="copy mb-4">{{#str}}featuredcategoriescopy , theme_stream{{/str}}</p>
+    </div>
+</div>
+<div class="row mt-4">
+        {{#categories}}
+        <div class="col-lg-{{catwidgetcolumns}}">
+            <div class="card shadow mb-5">
+            <a href="course/index.php?categoryid={{id}}" class="text-white">
+                <div class="card-img"><img src="{{imgurl}}" alt="Category image" class="img-fluid"></div>
+                <div class="card-img-overlay text-center">
+                <h3 class="h5 card-title">{{name}}</h3>
+                <p class="h5 total-courses">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i><br>
+                    <span >{{total}}</span>
+                    {{coursecountstring}}</p>
+                </div>
+            </a>
+            </div>
+        </div>
+        {{/categories}}
+        {{#nocategory}}
+            <p>{{#str}}noresults , theme_stream{{/str}}</p>
+        {{/nocategory}}
+    </div>
+</div>

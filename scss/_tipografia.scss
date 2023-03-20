@@ -1,0 +1,25 @@
+// Fonts Import.
+@font-face {
+    font-family: 'Nunito';
+    src: url([[font:theme|Nunito-VariableFont_wght.ttf]]) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url([[font:theme|Nunito-Regular.ttf]]) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+// Typography.
+// Sets the global font from the theme setting.
+* {
+    font-family: $sitefont, 'Nunito', Verdana, sans-serif;
+}
+// Fixes dropdown font while using Firefox. https://bugzilla.mozilla.org/show_bug.cgi?id=1536148
+@-moz-document url-prefix() {
+    form select option {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
