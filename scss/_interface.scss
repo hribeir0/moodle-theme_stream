@@ -233,6 +233,10 @@ header {
         right: calc(#{$drawer-right-width} + 2rem);
     }
 }
+// When there's a sticky footer.
+.hasstickyfooter #back-to-top {
+    bottom: calc(5rem + 60px);
+  }
 
 // Corrects letters pagination.
 .pagination {
@@ -273,6 +277,9 @@ header {
                 margin-top: 2rem;
             }
         }
+    }
+    .top-block-region .card {
+        border: none;
     }
     .widgets {
         .widget-header {

@@ -85,8 +85,8 @@ $THEME->layouts = [
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array(),
-        'defaultregion' => array(),
+        'regions' => array('topblock'),
+        'defaultregion' => 'topblock',
         'options' => array('langmenu' => true),
     ),
     // Standard layout with blocks.

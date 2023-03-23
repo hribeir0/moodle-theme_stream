@@ -1,6 +1,6 @@
 # Moodle Stream Theme
 
-Stream is a **Boost child Moodle 4+ theme** with some added features. And it's based on some excelent themes out there (check acknowledgments)
+Stream is a **Boost child Moodle 4+ theme** with some added features. And it's based on some excellent themes out there (check acknowledgements)
 This is my first take on Moodle dev so bear with me. Experiment it with care and let me know what you think.
 
 
@@ -16,9 +16,9 @@ The usual workflow. Please set up available options for a better end result. In 
 
 ## Features
 
-- Social media support (Facebook, Youtube, Instagram, Linkedin, Pinterest)
+- Social media support (Facebook, Youtube, Instagram, Linkedin, Pinterest, Twitter)
 - Full Width or narrow (like Boost)
-- Ability to add block after secondary navigation in the course page (check my course presentation block)
+- Ability to add blocks before main content on the course page (check my course presentation block) and homepage
 - Course header image from the course setting (defaults to theme image)
 - Course completion in the course header
 - Quick admin menu
@@ -35,7 +35,7 @@ On going.
 
 ## Theme Translations
 
-The pt_pt versuion is already available but we have to use AMOS. Other languages need to be translated and created.
+The pt_pt version is already available but we have to use AMOS. Other languages need to be translated and created.
 
 ## Default images credits
 
@@ -46,6 +46,7 @@ The theme includes the following default images. You are free to add your own bu
 - Login Image [Janko Ferlič - Unsplash](https://unsplash.com/pt-br/fotografias/sfL_QOnmy00?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 - Default header image [Rhii Photography - Unsplash](https://unsplash.com/pt-br/fotografias/Xy6FpnFyVjo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 - Default course card image [Erol Ahmed - Unsplash](https://unsplash.com/pt-br/fotografias/XsQ8nUKpAO4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Default category card image [NORTHFOLK - Unsplash](https://unsplash.com/pt-br/fotografias/b_Qt9f2egBM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ## Acknowledgments
 

@@ -1,0 +1,9 @@
+// Fixes manual completion after adding div and class on activity_info.mustache
+@media (min-width: 768px) {
+    .activity-item .manual-completion {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: 5px;
+    }
+}

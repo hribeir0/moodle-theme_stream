@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.9 - 2023-03-20
+
+- [ADD]Twitter setting for the footer
+- [ADD]Top block region on Homepage
+
 ## Version 0.8 - 2023-03-14
 
 [ADD]Mod icons color settings

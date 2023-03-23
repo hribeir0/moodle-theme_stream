@@ -47,6 +47,12 @@ if (defined('BEHAT_SITE_RUNNING')) {
 }
 
 $extraclasses = [];
+$topblockshtml = $OUTPUT->blocks('topblock');
+$hastopblocks = (strpos($topblockshtml, 'data-block=') !== false || !empty($addblockbutton));
+
+// Methods to print top block region.
+$addtopblock = $OUTPUT->addblockbutton('topblock');
+$topblock = $OUTPUT->custom_block_region('topblock');
 
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
@@ -96,6 +102,8 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
+    'addtopblock' => $addtopblock,
+    'topblock' => $topblock,
 ];
 // Include the content for the footer.
 require_once(__DIR__ . '/includes/footer.php');

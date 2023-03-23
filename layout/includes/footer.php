@@ -32,5 +32,6 @@ $templatecontext['instagramurl'] = $themesettings->instagramurl;
 $templatecontext['pinteresturl'] = $themesettings->pinteresturl;
 $templatecontext['youtubeurl'] = $themesettings->youtubeurl;
 $templatecontext['linkedinurl'] = $themesettings->linkedinurl;
+$templatecontext['twitterurl'] = $themesettings->twitterurl;
 $templatecontext['leftcolumn'] = format_text($themesettings->leftcolumn, FORMAT_HTML);
 $templatecontext['centercolumn'] = format_text($themesettings->centercolumn, FORMAT_HTML);

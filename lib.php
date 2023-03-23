@@ -22,23 +22,6 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-
-
-/**
- * Serves any files associated with the theme settings.
- *
- * More info https://moodle.org/mod/forum/discuss.php?d=375358#p1513562
- *
- * @param stdClass $course
- * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
- * @return bool
- */
-
 /**
  * Serves any files associated with the theme settings.
  *
@@ -111,6 +94,10 @@ function theme_stream_get_pre_scss($theme) {
             $scss .= '$' . $target . ': ' . $value . ";\n";
         }, (array) $targets);
 
+    }
+    // Prepend pre-scss.
+    if (!empty($theme->settings->scsspre)) {
+        $scss .= $theme->settings->scsspre;
     }
     return $scss;
 }

@@ -157,6 +157,9 @@ $activity-icon-colors: map-merge(
 // course completion meter.
 @import "_courseCompletionProgress.scss";
 
+// Incourse styles.
+@import "_incourse.scss";
+
 // Dynamic rules from Theme settings.
 @import "_settings.scss";
 

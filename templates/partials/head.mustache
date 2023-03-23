@@ -15,7 +15,20 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    Page header.
+    @template theme_stream/head
+
+    Stream head template.
+
+    Example context (json):
+    { "output" :
+        {
+            "doctype" : "<!DOCTYPE html>",
+            "htmlattributes": "",
+            "page_title": "Page Title",
+            "favicon": "favicon.ico",
+            "external_fonts": ""
+        }
+    }
 }}
 {{{ output.doctype }}}
 <html {{{ output.htmlattributes }}}>

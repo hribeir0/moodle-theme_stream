@@ -77,6 +77,9 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    $page->add(new admin_setting_heading('theme_stream/customstylessettings',
+    get_string('customstylessettings', 'theme_stream'), ''));
+
     // Favicon.
     $name = 'theme_stream/favicon';
     $title = get_string('favicon', 'theme_stream');
@@ -100,6 +103,18 @@ if ($ADMIN->fulltree) {
     $title = get_string('fullwidthpage', 'theme_stream');
     $description = get_string('fullwidthpage_desc', 'theme_stream');
     $setting = new admin_setting_configcheckbox($name, $title, $description, '1');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Raw SCSS to include before the content. As per Boost.
+    $setting = new admin_setting_scsscode('theme_stream/scsspre',
+    get_string('rawscsspre', 'theme_boost'), get_string('rawscsspre_desc', 'theme_boost'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Raw SCSS to include after the content. As per Boost.
+    $setting = new admin_setting_scsscode('theme_stream/scss', get_string('rawscss', 'theme_boost'),
+    get_string('rawscss_desc', 'theme_boost'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

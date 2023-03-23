@@ -54,11 +54,14 @@
                     </div>
                 {{/isautomatic}}
                 {{^isautomatic}}
-                    {{#showmanualcompletion}}
-                        {{$ core_course/completion_manual }}
-                            {{> core_course/completion_manual }}
-                        {{/ core_course/completion_manual }}
-                    {{/showmanualcompletion}}
+                    {{! Div added by hribeiro }}
+                    <div class="manual-completion">
+                        {{#showmanualcompletion}}
+                            {{$ core_course/completion_manual }}
+                                {{> core_course/completion_manual }}
+                            {{/ core_course/completion_manual }}
+                        {{/showmanualcompletion}}
+                    </div>
                 {{/isautomatic}}
             </div>
         {{/uservisible}}
@@ -66,7 +69,7 @@
     {{#activityinfo}}
         {{#hasdates}}
         <div data-region="activity-dates" class="activity-dates small course-description-item">
-            <div class="description-inner text-right">
+            <div class="description-inner">
                 {{#activitydates}}
                     {{$core_course/activity_date}}
                         {{>core_course/activity_date}}

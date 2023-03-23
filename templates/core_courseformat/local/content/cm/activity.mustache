@@ -65,12 +65,12 @@
             {{/ core_courseformat/local/content/cm/badges }}
         {{/hasname}}
         {{#cmname}}
-        {{$ core/inplace_editable }}
-            {{> core/inplace_editable }}
-        {{/ core/inplace_editable }}
+            {{$ core_courseformat/local/content/cm/cmname }}
+                {{> core_courseformat/local/content/cm/cmname }}
+            {{/ core_courseformat/local/content/cm/cmname }}
         {{/cmname}}
         {{#afterlink}}
-            <div class="afterlink">
+            <div class="afterlink d-flex align-items-center ml-3">
                 {{{afterlink}}}
             </div>
         {{/afterlink}}
@@ -106,4 +106,9 @@
             </div>
         </div>
     {{/altcontent}}
+    {{#modavailability}}
+        {{$ core_courseformat/local/content/cm/availability }}
+            {{> core_courseformat/local/content/cm/availability }}
+        {{/ core_courseformat/local/content/cm/availability }}
+    {{/modavailability}}
 </div>
