@@ -123,6 +123,7 @@ $fullwidthpage: 0 !default;
 
 @if $fullwidthpage == 1 {
     $course-content-maxwidth: 100%;
+    $medium-content-maxwidth: $course-content-maxwidth;
 }
 
 // Activity icon colors to use with defined variables.
