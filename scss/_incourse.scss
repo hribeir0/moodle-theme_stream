@@ -7,3 +7,14 @@
         margin-bottom: 5px;
     }
 }
+// Course index section spacing
+.drawer-left .drawercontent {
+    .courseindex-section {
+        margin-bottom: 5px;
+        background-color: $gray-100;
+    }
+    .courseindex {
+        background-color: $white;
+        padding-right: 0;
+    }
+}

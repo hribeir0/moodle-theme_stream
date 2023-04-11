@@ -25,15 +25,21 @@
 /**
  * Serves any files associated with the theme settings.
  *
+ * @param stdClass $course
+ * @param stdClass $cm
  * @param context $context
  * @param string $filearea
  * @param array $args
  * @param bool $forcedownload
  * @param array $options
- * @return mixed
+ * @return bool
  */
-function theme_stream_pluginfile($context, $filearea, $args, $forcedownload, array $options = array()) {
-    if ($context->contextlevel == CONTEXT_SYSTEM) {
+function theme_stream_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    // Settings fileareas. Any new uploadsetting filearea should be added to array.
+    $uploadsettings = ['loginimg', 'homepagepromoboximage', 'favicon', 'catwidgetimage', 'coursecardimage', 'courseheaderimg',
+    'homepageheroimage0', 'homepageheroimage1', 'homepageheroimage2', 'homepageheroimage3', 'homepageheroimage4'];
+
+    if ($context->contextlevel == CONTEXT_SYSTEM && in_array($filearea, $uploadsettings)) {
         $theme = theme_config::load('stream');
         // By default, theme files must be cache-able by both browsers and proxies.
         if (!array_key_exists('cacheability', $options)) {
@@ -240,7 +246,7 @@ function theme_stream_show_featured_courses() {
     $featuredcourses = $DB->get_records_sql($sql);
 
     // Activate widget.
-    $templatecontext['coursewidget'] = 1;
+    $templatecontext['featuredcourseswidget'] = 1;
     // If we get no results from applied filters.
     if (empty($featuredcourses)) {
         $templatecontext['nofeaturedcourses'] = 1;

@@ -108,23 +108,43 @@ $templatecontext = [
 // Include the content for the footer.
 require_once(__DIR__ . '/includes/footer.php');
 
+// Carousel content.
 // Sets a default hero image if none exists on the theme settings.
-$homepageheroimage = $OUTPUT->image_url('default/homepagehero', 'theme');
-if ($theme->setting_file_url('homepageheroimage', 'homepageheroimage')) {
-    $homepageheroimage = $theme->setting_file_url('homepageheroimage', 'homepageheroimage');
-}
-// Hero variables.
-$hero = [
-    'homepageheroimage' => $homepageheroimage,
-    'herotitle' => $theme->settings->herotitle,
-    'heromotto' => $theme->settings->heromotto,
-    'herolink' => $theme->settings->herolink
-];
-$templatecontext = array_merge($templatecontext, $hero);
+$defaultimage = $OUTPUT->image_url('default/homepagehero', 'theme');
 
-$settings = get_config('theme_stream');
+// Get nº of selected slides.
+$slidestotal = $theme->settings->slidestotal;
+$i = 0;
+// Check for single carousel item to avoid uneeded html elements.
+$slidestotal <= 1 ? $data['slides'][$i]['single'] = 1 : $data['slides'][$i]['single'] = 0;
+// Cycle through the slider elements.
+while ($i < $slidestotal) {
+    // Dynamic name fields.
+    $title = "herotitle{$i}";
+    $motto = "heromotto{$i}";
+    $link = "herolink{$i}";
+    $sliderimage = "homepageheroimage{$i}";
+    $sliderbutton = "sliderbutton{$i}";
+    // Matching mustache data and info.
+    $data['slides'][$i]['herotitle'] = $theme->settings->$title;
+    $data['slides'][$i]['slidermotto'] = $theme->settings->$motto;
+    $data['slides'][$i]['sliderlink'] = $theme->settings->$link;
+    $data['slides'][$i]['sliderbutton'] = $theme->settings->$sliderbutton;
+    $data['slides'][$i]['active'] = $i === 0; // Defining the starting point.
+    $data['slides'][$i]['index'] = $i; // To trace pace.
+    // If no image was uploaded use theme's default hero image.
+    if (empty($theme->settings->$sliderimage)) {
+        $data['slides'][$i]['sliderimage'] = $defaultimage;
+    } else {
+        $data['slides'][$i]['sliderimage'] = $theme->setting_file_url($sliderimage, $sliderimage);;
+    }
+    $i++;
+}
+// Add carousel data to template context.
+$templatecontext = array_merge($templatecontext, $data);
+
 // Categories Widget.
-if ($settings->catwidget ) {
+if ($theme->settings->catwidget ) {
     $templatecontext = array_merge($templatecontext, theme_stream_show_catfrontpage());
 }
 
@@ -144,11 +164,9 @@ $promodata = [
 ];
 $templatecontext = array_merge($templatecontext, $promodata);
 
-// Featured courses Widget.
-// TODO: setting to show featured courses.
-$featuredcourses = [
-    'featuredcourseswidget' => 1,
- ];
-    $templatecontext = array_merge($templatecontext, theme_stream_show_featured_courses(), $featuredcourses);
 
+// Featured courses Widget.
+if ($theme->settings->featuredcourseswidget) {
+    $templatecontext = array_merge($templatecontext, theme_stream_show_featured_courses());
+}
 echo $OUTPUT->render_from_template('theme_stream/frontpage', $templatecontext);

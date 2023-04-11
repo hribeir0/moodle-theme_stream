@@ -254,28 +254,35 @@ header {
     height: calc(100vh - 60px);
     left: 0;
     right: 0;
-    .jumbotron {
-        color: white;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 300px;
-        @media (min-width: 992px) {
-            height: 500px;
+    .main-carousel {
+        img {
+            object-fit: cover;
+            height: 300px;
+            @media (min-width: 992px) {
+                height: 400px;
+            }
         }
         .overlay {
-            width: 93%;
+            position: absolute;
+            width: 100%;
             height: 100%;
-            background: #0000007a;
-            margin: 0 auto;
+            background: #1d1d1d75;
+            top: 0;
         }
-        .container {
+        .carousel-caption {
             position: relative;
-            top: 20%;
-            p,
-            button {
+            left: initial;
+            right: initial;
+            z-index: 10;
+            color: #fff;
+            text-align: left;
+            margin-top: 5rem;
+            .btn {
                 margin-top: 2rem;
             }
+        }
+        .carousel-control[role="button"]:focus {
+            box-shadow: none;
         }
     }
     .top-block-region .card {

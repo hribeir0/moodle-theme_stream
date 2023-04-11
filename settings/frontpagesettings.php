@@ -28,40 +28,74 @@ defined('MOODLE_INTERNAL') || die();
 // Frontpage tab.
 $page = new admin_settingpage ('theme_stream_frontpage', get_string('frontpagestream', 'theme_stream'));
 
-// Hero title.
-$name = 'theme_stream/herotitle';
-$title = get_string('herotitle', 'theme_stream');
-$description = get_string('herotitle_desc', 'theme_stream');
-$setting = new admin_setting_configtext($name, $title, $description , 'Hogwarts Academy', PARAM_TEXT);
+$page->add(new admin_setting_heading('theme_stream/slidersettingheading', get_string('slidersettingheading', 'theme_stream'), ''));
+
+// Slider slots.
+$choices = array(
+    '1' => '1',
+    '2' => '2',
+    '3' => '3',
+    '4' => '4',
+    '5' => '5'
+);
+$name = 'theme_stream/slidestotal';
+$title = get_string('slidestotal', 'theme_stream');
+$description = get_string('slidestotal_desc', 'theme_stream');
+$setting = new admin_setting_configselect($name, $title, $description , '1', $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Hero motto.
-$name = 'theme_stream/heromotto';
-$title = get_string('heromotto', 'theme_stream');
-$description = get_string('heromotto_desc', 'theme_stream');
-$setting = new admin_setting_configtext($name, $title, $description ,
-'The finest school of witchcraft and wizardry in the world.' , PARAM_TEXT);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
 
-// Hero image setting.
-$name = 'theme_stream/homepageheroimage';
-$title = get_string('homepageheroimage', 'theme_stream');
-$description = get_string('homepageheroimage_desc', 'theme_stream');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'homepageheroimage', 0,
-array('maxfiles' => 1, 'accepted_types' => 'web_image'));
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+$slidestotal = get_config('theme_stream', 'slidestotal');
+$i = 0;
+while ($i < $slidestotal ) {
+    // Prints slider title settings per total.
+    $name = 'theme_stream/herotitle' . $i;
+    $title = get_string('herotitle', 'theme_stream') . $i;
+    $description = get_string('herotitle_desc', 'theme_stream');
+    $setting = new admin_setting_configtext($name, $title, $description , 'Hogwarts Academy', PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
-// Hero link.
-$name = 'theme_stream/herolink';
-$title = get_string('herolink', 'theme_stream');
-$description = get_string('herolink_desc', 'theme_stream');
-$default = $CFG->wwwroot . '/course';
-$setting = new admin_setting_configtext($name, $title, $description , $default , PARAM_TEXT);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+    // Prints slider motto settings per total.
+    $name = 'theme_stream/heromotto' . $i;
+    $title = get_string('heromotto', 'theme_stream') . $i;
+    $description = get_string('heromotto_desc', 'theme_stream');
+    $setting = new admin_setting_configtext($name, $title, $description ,
+    'The finest school of witchcraft and wizardry in the world.' , PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Hero link.
+    $name = 'theme_stream/herolink' . $i;
+    $title = get_string('herolink', 'theme_stream') . $i;
+    $description = get_string('herolink_desc', 'theme_stream');
+    $setting = new admin_setting_configtext($name, $title, $description , null , PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Button text.
+    $name = 'theme_stream/sliderbutton' . $i;
+    $title = get_string('sliderbutton', 'theme_stream') . $i;
+    $description = get_string('sliderbutton_desc', 'theme_stream');
+    $setting = new admin_setting_configtext($name, $title, $description , null , PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Hero image setting.
+    $name = 'theme_stream/homepageheroimage' . $i;
+    $title = get_string('homepageheroimage', 'theme_stream') . $i;
+    $description = get_string('homepageheroimage_desc', 'theme_stream');
+    $filearea = 'homepageheroimage' . $i;
+    $setting = new admin_setting_configstoredfile($name, $title, $description, $filearea, 0,
+    array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $i++;
+}
+
+
 
 // Cat Widget heading.
 $page->add(new admin_setting_heading('theme_stream/catwidgetheading', get_string('catwidgetheading', 'theme_stream'), ''));

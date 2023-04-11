@@ -19,7 +19,9 @@ $strongicons: 0 !default;
             background-color: $value;
             .activityicon,
             .icon {
-                filter: brightness(0) invert(0);
+                &:not(.nofilter) {
+                    filter: brightness(0) invert(0);
+                }
             }
         }
     }

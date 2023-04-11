@@ -16,6 +16,7 @@ The usual workflow. Please set up available options for a better end result. In 
 
 ## Features
 
+- Homepage Main Slider (up to 5 slides)
 - Social media support (Facebook, Youtube, Instagram, Linkedin, Pinterest, Twitter)
 - Full Width or narrow (like Boost)
 - Ability to add blocks before main content on the course page (check my course presentation block) and homepage
@@ -24,7 +25,7 @@ The usual workflow. Please set up available options for a better end result. In 
 - Quick admin menu
 - Capability to change theme settings - not only admin
 - Frontpage widgets (categories with images, promobox, featured courses, ...)
-- Activities navigation
+- Activities navigation (prev / next) with tooltips
 - Hidden course warning
 - Login Layout page
 - Activities' icons colors and outline

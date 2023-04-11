@@ -1,9 +1,14 @@
 # Changelog
 
-## Version 0.9 - 2023-03-20
+## Version 1.0 -2023-04-10
+- [ADD]Homepage Dynamic Main Slider
+- [FIX]Settings using Uploaded files were not being found
+- [FIX]Featured courses widget always shown despite the setting
+## Version 0.9 - 2023-03-26
 
 - [ADD]Twitter setting for the footer
 - [ADD]Top block region on Homepage
+- [ADD]Tooltip in the activity navigation buttons
 
 ## Version 0.8 - 2023-03-14
 

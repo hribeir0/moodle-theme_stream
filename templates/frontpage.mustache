@@ -75,15 +75,7 @@
                         {{#headercontent}}
                             {{> core/activity_header }}
                         {{/headercontent}}
-                        <div class="jumbotron jumbotron-fluid" style="background-image:url({{{homepageheroimage}}})">
-                            <div class="overlay">
-                                <div class="container">
-                                    <h1 class="display-4">{{herotitle}}</h1>
-                                    <p class="h5">{{heromotto}}</p>
-                                    <a href="{{{herolink}}}" class="btn btn-primary btn-lg" role="button">{{#str}}herolinktext, theme_stream{{/str}}</a>
-                                </div>
-                            </div>
-                        </div>
+                            {{> theme_stream/partials/main_slider }}
                         <div class="top-block-region container d-print-none" aria-label="{{#str}}blocks{{/str}}">
                             {{{ addtopblock }}}
                             {{{ topblock }}}
