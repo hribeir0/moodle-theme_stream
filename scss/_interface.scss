@@ -161,7 +161,8 @@ header {
             color: $white;
         }
         // Fixes user own pages because of img size.
-        .userinitials.size-100, .userpicture {
+        .userinitials.size-100,
+		.userpicture {
             width: 60px;
             height: 60px;
             font-size: 1.6rem;
