@@ -18,3 +18,17 @@
         padding-right: 0;
     }
 }
+// Fix Bulk Select position.
+.activity-item .bulkselect {
+    position: absolute;
+    left: -1.2rem;
+}
+.course-section-header .bulkselect {
+    left: -1.2rem;
+    position: relative;
+    width: 0;
+}
+@media (max-width: 768px) {
+    .bulkenabled .course-content {
+        margin-left: 1.2rem; }
+}

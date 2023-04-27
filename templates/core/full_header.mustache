@@ -60,8 +60,7 @@
                 {{#hascompletion}}
                 <div class="wrap-circles completion-meter" role="meter" aria-label="{{#str}}coursecompletion, completion{{/str}}"
                 aria-valuenow="{{completionrate}}" aria-valuemin="0" aria-valuemax="100">
-                <span class="m-1 p-2 text-info bg-light">{{#str}}coursecompletion, completion{{/str}}</span>
-                    <div class="mt-1 circle per-{{completionrate}}">
+                    <div class="mt-1 circle per-{{completionrate}}" data-toggle="tooltip" title="Course Completion" data-placement="left">
                       <div class="inner">{{completionrate}}%</div>
                     </div>
                 </div>
