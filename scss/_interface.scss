@@ -161,15 +161,11 @@ header {
             color: $white;
         }
         // Fixes user own pages because of img size.
-        .userinitials.size-100,
-        .userpicture {
+        .userinitials.size-100 {
             width: 60px;
             height: 60px;
             font-size: 1.6rem;
         }
-    }
-    .bulkEnable {
-        opacity: 0.8;
     }
     ol.breadcrumb {
         margin-left: $spacer * 1;
@@ -239,7 +235,7 @@ header {
 }
 // When there's a sticky footer.
 .hasstickyfooter #back-to-top {
-    bottom: calc(5rem + 5rem);
+    bottom: calc(5rem + 60px);
 }
 
 // Corrects letters pagination.
