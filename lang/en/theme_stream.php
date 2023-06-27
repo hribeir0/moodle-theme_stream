@@ -70,7 +70,8 @@ $string['catwidget_desc'] = 'Show a number of courses categories in a grid layou
 $string['catwidgetcolumns'] = 'Grid columns number';
 $string['catwidgetcolumns_desc'] = 'How many columns should we show.';
 $string['featuredcategories'] = 'Featured categories';
-$string['featuredcategoriescopy'] = 'Witchcraft school offers a multitude of themes for you to jump in. <a href="course/" >Explore them!</a>';
+$string['showcoursescount'] = 'Show courses count';
+$string['showcoursescount_desc'] = 'If set, show the total number of courses in each category';
 $string['maxcatnumber'] = 'Max categories to show';
 $string['maxcatnumber_desc'] = 'Max number of categories we should show in the widget; Your query will be limited to this.';
 $string['catwidgetimage'] = 'Category card image';
@@ -81,7 +82,7 @@ $string['externalfonts'] = 'External fonts';
 $string['externalfonts_desc'] = 'Activate external fonts service';
 $string['fonts'] = 'Font type';
 $string['choosencats'] = 'Categories to show';
-$string['choosencats_desc'] = 'Choose categories to show in the widget. Don\'t select to many.';
+$string['choosencats_desc'] = 'Choose categories to show in the widget. Don\'t select too many.';
 $string['counthiddencourses'] = 'Count hidden courses';
 $string['counthiddencourses_desc'] = 'If enabled, counts the total number of courses in categories including the hidden ones.';
 $string['noresults'] = 'Found no results';
@@ -116,7 +117,7 @@ $string['homepagepromoboxurl_desc'] = 'URL to use as a link for the button. Defa
 $string['promoboxwidgetheading'] = 'Promobox widget';
 $string['featuredcourseswidgetheading'] = 'Featured courses widget';
 $string['featuredcourses'] = 'Featured courses';
-$string['featuredcoursescopy'] = 'With our online courses, you can learn anytime, anywhere, at your own pace. <a href="/course" >Explore them!</a>';
+$string['featuredcoursescopy'] = 'With our online courses, you can learn anytime, anywhere, at your own pace. <a href="course/" >Explore them!</a>';
 $string['featuredcourseswidget'] = 'Featured courses widget';
 $string['featuredcourseswidget_desc'] = 'Show a section where featured courses are presented in a 3 column card layout. By default,  we query visible courses with a future start date. Check the following settings to check how to tweek that.';
 $string['featuredcoursesshowcat'] = 'Show category';
@@ -163,3 +164,7 @@ $string['slidestotal_desc'] = 'Select here how many items you wanto to include o
 $string['prev'] = 'Previous';
 $string['next'] = 'Next';
 $string['jumptoslide'] = 'Go to slide';
+// Privacy API.
+$string['privacy:metadata'] = 'Stream theme does not store any personal data about any user.';
+$string['featuredcategoriessubtitle'] = 'Categories widget subtitle';
+$string['featuredcategoriessubtitle_desc'] = 'A simple text to use as subtitle for the widget. Will show nothing if setting is empy.';

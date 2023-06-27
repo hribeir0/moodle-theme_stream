@@ -119,12 +119,30 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $settings->hide_if('theme_stream/choosencats', 'theme_stream/catwidget', 'notchecked');
 $page->add($setting);
 
+// Coursecat widget heading copy.
+$name = 'theme_stream/featuredcategoriescopy';
+$title = get_string('featuredcategoriessubtitle', 'theme_stream');
+$description = get_string('featuredcategoriessubtitle_desc', 'theme_stream');
+$setting = new admin_setting_configtext($name, $title, $description , '', PARAM_TEXT);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$settings->hide_if('theme_stream/featuredcategoriescopy', 'theme_stream/catwidget', 'notchecked');
+$page->add($setting);
+
+// Show courses count.
+$name = 'theme_stream/showcoursescount';
+$title = get_string('showcoursescount', 'theme_stream');
+$description = get_string('showcoursescount_desc', 'theme_stream');
+$setting = new admin_setting_configcheckbox($name, $title, $description , 1);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$settings->hide_if('theme_stream/showcoursescount', 'theme_stream/catwidget', 'notchecked');
+$page->add($setting);
+
 $name = 'theme_stream/counthiddencourses';
 $title = get_string('counthiddencourses', 'theme_stream');
 $description = get_string('counthiddencourses_desc', 'theme_stream');
 $setting = new admin_setting_configcheckbox($name, $title, $description , 0);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->hide_if('theme_stream/counthiddencourses', 'theme_stream/catwidget', 'notchecked');
+$settings->hide_if('theme_stream/counthiddencourses', 'theme_stream/showcoursescount', 'notchecked');
 $page->add($setting);
 
 $name = 'theme_stream/catwidgetcolumns';

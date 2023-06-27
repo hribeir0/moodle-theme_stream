@@ -159,6 +159,8 @@ function theme_stream_show_catfrontpage() {
     $templatecontext['catwidget'] = 1;
     $counthiddencourses = $theme->settings->counthiddencourses;
 
+    // Widget heading subtitle.
+    $templatecontext['catwidgetheadingsubtitle'] = $theme->settings->featuredcategoriescopy;
     // Choosen cats to array from setting.
     $categories = explode(',', $theme->settings->choosencats);
     // If user has choosen categories to show.
@@ -167,24 +169,32 @@ function theme_stream_show_catfrontpage() {
         foreach ($categories as $choosencat) {
             $category = \core_course_category::get($choosencat);
             $courses = get_courses($category->id);
-            // Check to count hidden courses or not.
-            if ($counthiddencourses) {
-                $count = $category->coursecount;
-            } else {
+            // If we should we count courses.
+            if ($theme->settings->showcoursescount) {
+                // Check to count hidden courses or not.
+                if ($counthiddencourses) {
+                    $count = $category->coursecount;
+                } else {
                     // Counts the number of visible courses on each category.
-                $count = array_reduce($courses, function ($carry, $course) {
-                    return $carry + ($course->visible == 1);
-                }, 0);
-                // Skips the category if no course is visible to students.
-                if ($count < 1) {
-                    continue;
+                    $count = array_reduce($courses, function ($carry, $course) {
+                        return $carry + ($course->visible == 1);
+                    }, 0);
+                    // Skips the category if no course is visible to students.
+                    if ($count < 1) {
+                        continue;
+                    }
+                }
+                $templatecontext['categories'][$n]['total'] = $count;
+                // Deal with plural and single 'course' string.
+                if ($count == 1) {
+                    $templatecontext['categories'][$n]['coursecountstring'] = get_string('course');
+                } else {
+                    $templatecontext['categories'][$n]['coursecountstring'] = get_string('courses');
                 }
             }
-
             $templatecontext['categories'][$n]['name'] = $category->name;
             $templatecontext['categories'][$n]['id'] = $category->id;
-            $templatecontext['categories'][$n]['total'] = $count;
-            if (!empty($courses && $count > 0)) {
+            if (!empty($courses)) {
                 foreach ($courses as $course) {
                     $imgurl = theme_stream_get_course_image($course->id);
                     if (!empty($imgurl)) {
@@ -193,12 +203,7 @@ function theme_stream_show_catfrontpage() {
                     }
                 }
             }
-            // Deal with plural and single 'course' string.
-            if ($count == 1) {
-                $templatecontext['categories'][$n]['coursecountstring'] = get_string('course');
-            } else {
-                $templatecontext['categories'][$n]['coursecountstring'] = get_string('courses');
-            }
+
             // If there isn't any course with an image get a standard one from the settings or from the default pix folder.
             if (!isset($templatecontext['categories'][$n]['imgurl'])) {
                 $imgurl = $theme->setting_file_url('catwidgetimage', 'catwidgetimage');

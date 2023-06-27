@@ -37,7 +37,7 @@
     <div class="widget-header col-lg-4">
         <h2 class="h3 mt-4"><i class="fa fa-tags" aria-hidden="true"></i>
         {{#str}}featuredcategories , theme_stream{{/str}}</h2>
-        <p class="copy mb-4">{{#str}}featuredcategoriescopy , theme_stream{{/str}}</p>
+        {{ #catwidgetheadingsubtitle }}<p class="copy mb-4">{{ catwidgetheadingsubtitle }}</p>{{ /catwidgetheadingsubtitle }}
     </div>
 </div>
 <div class="row mt-4">
@@ -48,10 +48,11 @@
                 <div class="card-img"><img src="{{imgurl}}" alt="Category image" class="img-fluid"></div>
                 <div class="card-img-overlay text-center">
                 <h3 class="h5 card-title">{{name}}</h3>
-                <p class="h5 total-courses">
+                {{#total}}<p class="h5 total-courses">
                     <i class="fa fa-graduation-cap" aria-hidden="true"></i><br>
                     <span >{{total}}</span>
                     {{coursecountstring}}</p>
+                {{/total}}
                 </div>
             </a>
             </div>

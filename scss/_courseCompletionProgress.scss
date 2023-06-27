@@ -6,12 +6,6 @@
     justify-content: right;
     padding-right: 15px;
 }
-.completion-meter {
-    span {
-        border-radius: 6px;
-        opacity: 0.8;
-    }
-}
 .circle {
     position: relative;
     width: 40px;
@@ -19,6 +13,7 @@
     border-radius: 50%;
     background: #298976;
     overflow: hidden;
+    opacity: 0.8;
     .inner {
         display: flex;
         justify-content: center;

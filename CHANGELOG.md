@@ -1,9 +1,18 @@
 # Changelog
 
+## Version 1.1 - 2023-06-15
+- [ADD]Category widget setting to show course total number per category
+- [FIX]Login image height
+- [FIX]Course widget heading link
+- [FIX]Missing privacy support
+
 ## Version 1.0 -2023-04-10
 - [ADD]Homepage Dynamic Main Slider
 - [FIX]Settings using Uploaded files were not being found
 - [FIX]Featured courses widget always shown despite the setting
+
+
+
 ## Version 0.9 - 2023-03-26
 
 - [ADD]Twitter setting for the footer
@@ -12,8 +21,8 @@
 
 ## Version 0.8 - 2023-03-14
 
-[ADD]Mod icons color settings
-[ADD]Mod icons outline setting
+- [ADD]Mod icons color settings
+- [ADD]Mod icons outline setting
 
 ## Version 0.7 - 2023-02-21
 
