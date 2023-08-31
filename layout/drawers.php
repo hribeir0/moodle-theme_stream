@@ -86,6 +86,7 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+$theme = theme_config::load('stream');
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -116,9 +117,17 @@ require_once(__DIR__ . '/includes/footer.php');
 require_once(__DIR__ . '/includes/scrollspy.php');
 
 // Loads backtotop button. hribeiro dec2022.
-$showcompletion = get_config('theme_stream', 'backtotopbutton');
-if ($showcompletion) {
+$backtotopbutton = $theme->settings->backtotopbutton;
+if ($backtotopbutton) {
     $PAGE->requires->js_call_amd('theme_stream/backtotop', 'init');
+}
+
+// Check for the option to print a course index heading.
+$courseindexheading = $theme->settings->courseindexheading;
+if ($courseindexheading != 0) {
+    $templatecontext['courseindexheading'] = format_string($this->page->course->$courseindexheading);
+} else {
+    $templatecontext['courseindexheading'] = null;
 }
 
 echo $OUTPUT->render_from_template('theme_stream/drawers', $templatecontext);

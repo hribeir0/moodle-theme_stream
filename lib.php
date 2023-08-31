@@ -87,7 +87,11 @@ function theme_stream_get_pre_scss($theme) {
         'modiconcolorcommunication' => ['communication'],
         'modiconcolorcontent' => ['content'],
         'modiconcolorinterface' => ['interface'],
-
+        'homepageheroopacity0' => ['slider0-opacity'],
+        'homepageheroopacity1' => ['slider1-opacity'],
+        'homepageheroopacity2' => ['slider2-opacity'],
+        'homepageheroopacity3' => ['slider3-opacity'],
+        'homepageheroopacity4' => ['slider4-opacity'],
     ];
 
     // Prepend variables first.

@@ -168,3 +168,8 @@ $string['jumptoslide'] = 'Go to slide';
 $string['privacy:metadata'] = 'Stream theme does not store any personal data about any user.';
 $string['featuredcategoriessubtitle'] = 'Categories widget subtitle';
 $string['featuredcategoriessubtitle_desc'] = 'A simple text to use as subtitle for the widget. Will show nothing if setting is empy.';
+// End of Privacy API.
+$string['courseindexheading'] = 'Show extra info in the course index.';
+$string['courseindexheading_desc'] = 'Show course name or shortname as heading in the course index.';
+$string['homepageheroopacity'] = 'Overlay opacity';
+$string['homepageheroopacity_desc'] = 'Overlay opacity. 0 transparent, 10 solid dark gray';

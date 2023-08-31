@@ -164,3 +164,5 @@ $string['next'] = 'Seguinte';
 $string['jumptoslide'] = 'Ir para slide';
 // Privacy API.
 $string['privacy:metadata'] = 'O tema Stream não guarda qualquer dado pessoal sobre qualquer utilizador.';
+$string['homepageheroopacity'] = 'Opacidade sobre a foto';
+$string['homepageheroopacity_desc'] = 'Opacidade. 0 transparente, 10 cinzento escuro opaco';

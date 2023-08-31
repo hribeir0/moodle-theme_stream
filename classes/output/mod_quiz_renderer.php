@@ -18,17 +18,29 @@
  * Plugin version and other meta-data are defined here.
  *
  * @package     theme_stream
- * @copyright   2022 Hugo Ribeiro <ribeiro.hugo@gmail.com>
+ * @copyright   2023 Hugo Ribeiro <ribeiro.hugo@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-defined('MOODLE_INTERNAL') || die();
+namespace theme_stream\output;
 
-$plugin->component = 'theme_stream';
-$plugin->release = '1.2';
-$plugin->version = 2023081400;
-$plugin->requires = 2022041900;
-$plugin->maturity = MATURITY_RC;
-$plugin->dependencies = [
-    'theme_boost' => 2022041900
-];
+use html_writer;
+
+/**
+ * Override Mod Quiz renderer
+ *
+ * @package    theme_stream
+ * @copyright  2023 Hugo Ribeiro <ribeiro.hugo@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class mod_quiz_renderer extends \mod_quiz\output\renderer {
+    /**
+     * Remove back button while taking a quiz
+     *
+     * @param string $quizviewurl
+     * @return string
+     */
+    public function during_attempt_tertiary_nav($quizviewurl): string {
+        return '';
+    }
+}

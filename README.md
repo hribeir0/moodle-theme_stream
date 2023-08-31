@@ -22,6 +22,7 @@ The usual workflow. Please set up available options for a better end result. In 
 - Ability to add blocks before main content on the course page (check my course presentation block) and homepage
 - Course header image from the course setting (defaults to theme image)
 - Course completion in the course header
+- Course name/shortname in course index
 - Quick admin menu
 - Capability to change theme settings - not only admin
 - Frontpage widgets (categories with images, promobox, featured courses, ...)

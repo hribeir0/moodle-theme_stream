@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 1.2 - 2023-08-14
+- [ADD]Option to show course name, shortname or no heading in the course index
+- [FIX]Remove the Back (to quiz hall) Button while taking a quiz
+- [ADD]Setting to control slider's opacity
+
 ## Version 1.1 - 2023-06-15
 - [ADD]Category widget setting to show course total number per category
 - [FIX]Login image height

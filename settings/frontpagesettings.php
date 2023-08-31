@@ -92,10 +92,30 @@ while ($i < $slidestotal ) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Overlay Opacity.
+    $name = 'theme_stream/homepageheroopacity' . $i;
+    $title = get_string('homepageheroopacity', 'theme_stream') . $i;
+    $description = get_string('homepageheroopacity_desc', 'theme_stream');
+    $choices = [
+        '0' => '0',
+        '0.1' => '1',
+        '0.2' => '2',
+        '0.3' => '3',
+        '0.4' => '4',
+        '0.5' => '5',
+        '0.6' => '6',
+        '0.7' => '7',
+        '0.8' => '8',
+        '0.9' => '9',
+        '1' => '10',
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, '0.5', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->hide_if('theme_stream/catwidgetcolumns', 'theme_stream/catwidget', 'notchecked');
+    $page->add($setting);
+
     $i++;
 }
-
-
 
 // Cat Widget heading.
 $page->add(new admin_setting_heading('theme_stream/catwidgetheading', get_string('catwidgetheading', 'theme_stream'), ''));

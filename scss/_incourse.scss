@@ -8,14 +8,26 @@
     }
 }
 // Course index section spacing
-.drawer-left .drawercontent {
-    .courseindex-section {
-        margin-bottom: 5px;
-        background-color: $gray-100;
+.drawer-left {
+    .drawerheader {
+        .courseindexheading {
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .drawertoggle {
+            position: absolute;
+            right: 0;
+        }
     }
-    .courseindex {
-        background-color: $white;
-        padding-right: 0;
+    .drawercontent {
+        .courseindex-section {
+            margin-bottom: 5px;
+            background-color: $gray-100;
+        }
+        .courseindex {
+            background-color: $white;
+            padding-right: 0;
+        }
     }
 }
 // Fix Bulk Select position.
@@ -28,7 +40,9 @@
     position: relative;
     width: 0;
 }
+
 @media (max-width: 768px) {
     .bulkenabled .course-content {
-        margin-left: 1.2rem; }
+        margin-left: 1.2rem;
+    }
 }

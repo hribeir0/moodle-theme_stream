@@ -18,7 +18,7 @@
  * Stream theme original privacy class -
  *
  * @package     theme_stream
- * @category    privacy class
+ * @category    privacy
  * @copyright   2023 Hugo Ribeiro <ribeiro.hugo@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

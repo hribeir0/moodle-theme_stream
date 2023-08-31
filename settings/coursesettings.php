@@ -44,6 +44,19 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, '1');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Show ourse name/shortname in course index.
+$choices = [
+    0 => 'No extra info',
+    'fullname' => 'Fullname',
+    'shortname' => 'Shortname'
+];
+$name = 'theme_stream/courseindexheading';
+$title = get_string('courseindexheading', 'theme_stream');
+$description = get_string('courseindexheading_desc', 'theme_stream');
+$setting = new admin_setting_configselect($name, $title, $description, 'shortname', $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Header logo setting.
 $name = 'theme_stream/courseheaderimg';
 $title = get_string('courseheaderimg', 'theme_stream');

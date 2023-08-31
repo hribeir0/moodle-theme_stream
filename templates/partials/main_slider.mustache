@@ -49,8 +49,8 @@
     <div class="carousel-inner">
         {{#slides}}
         <div class="carousel-item {{#active}}active{{/active}}">
-            <img class="d-block w-100" src="{{{sliderimage}}}" alt="First slide">
-            <div class="overlay">
+            <img class="d-block w-100" src="{{{sliderimage}}}" alt="Slide {{index}} image">
+            <div class="overlay slide{{index}}">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="display-4">{{herotitle}}</h1>

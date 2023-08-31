@@ -270,8 +270,22 @@ header {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #1d1d1d75;
             top: 0;
+        }
+        .slide0 {
+            background: rgba($gray-900, $slider0-opacity);
+        }
+        .slide1 {
+            background: rgba($gray-900, $slider1-opacity);
+        }
+        .slide2 {
+            background: rgba($gray-900, $slider2-opacity);
+        }
+        .slide3 {
+            background: rgba($gray-900, $slider3-opacity);
+        }
+        .slide4 {
+            background: rgba($gray-900, $slider4-opacity);
         }
         .carousel-caption {
             position: relative;
