@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 1.2.1 - 2023-09-25
+- [FIX]Show slider captions on mobile
+- [ADD]Suport filters for the slider/hero
+
 ## Version 1.2 - 2023-08-14
 - [ADD]Option to show course name, shortname or no heading in the course index
 - [FIX]Remove the Back (to quiz hall) Button while taking a quiz

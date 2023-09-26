@@ -126,10 +126,10 @@ while ($i < $slidestotal) {
     $sliderimage = "homepageheroimage{$i}";
     $sliderbutton = "sliderbutton{$i}";
     // Matching mustache data and info.
-    $data['slides'][$i]['herotitle'] = $theme->settings->$title;
-    $data['slides'][$i]['slidermotto'] = $theme->settings->$motto;
+    $data['slides'][$i]['herotitle'] = format_string($theme->settings->$title);
+    $data['slides'][$i]['slidermotto'] = format_string($theme->settings->$motto);
     $data['slides'][$i]['sliderlink'] = $theme->settings->$link;
-    $data['slides'][$i]['sliderbutton'] = $theme->settings->$sliderbutton;
+    $data['slides'][$i]['sliderbutton'] = format_string($theme->settings->$sliderbutton);
     $data['slides'][$i]['active'] = $i === 0; // Defining the starting point.
     $data['slides'][$i]['index'] = $i; // To trace pace.
     // If no image was uploaded use theme's default hero image.
@@ -156,9 +156,9 @@ if ($theme->setting_file_url('homepagepromoboximage', 'homepagepromoboximage')) 
 }
 $promodata = [
     'promoboxwidget' => $theme->settings->homepagepromoboxwidget,
-    'promoboxtitle' => $theme->settings->homepagepromoboxtitle,
-    'promoboxtext' => $theme->settings->homepagepromoboxtext,
-    'promoboxbutton' => $theme->settings->homepagepromoboxbutton,
+    'promoboxtitle' => format_string($theme->settings->homepagepromoboxtitle),
+    'promoboxtext' => format_text($theme->settings->homepagepromoboxtext),
+    'promoboxbutton' => format_string($theme->settings->homepagepromoboxbutton),
     'promoboxurl' => $theme->settings->homepagepromoboxurl,
     'promoboximage' => $homepagepromoboximage,
 ];

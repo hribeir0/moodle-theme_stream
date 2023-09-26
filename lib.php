@@ -164,7 +164,7 @@ function theme_stream_show_catfrontpage() {
     $counthiddencourses = $theme->settings->counthiddencourses;
 
     // Widget heading subtitle.
-    $templatecontext['catwidgetheadingsubtitle'] = $theme->settings->featuredcategoriescopy;
+    $templatecontext['catwidgetheadingsubtitle'] = format_string($theme->settings->featuredcategoriescopy);
     // Choosen cats to array from setting.
     $categories = explode(',', $theme->settings->choosencats);
     // If user has choosen categories to show.
@@ -282,7 +282,7 @@ function theme_stream_show_featured_courses() {
         if (!$course->visible) {
             $templatecontext['featuredcourses'][$n]['hidden'] = get_string('availablesoon', 'theme_stream');
         }
-        $templatecontext['featuredcourses'][$n]['summary'] = $course->summary;
+        $templatecontext['featuredcourses'][$n]['summary'] = format_text($course->summary);
         // Print course tags.
         $tags = \core_tag_tag::get_item_tags('core', 'course', $course->id);
         $templatecontext['featuredcourses'][$n]['tags'] = $OUTPUT->tag_list($tags, '');
