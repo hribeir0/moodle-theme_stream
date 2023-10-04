@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.2.2 - 2023-10-04
+- [FIX]Slider bug when no opacity is set for all slider slots
+
 ## Version 1.2.1 - 2023-09-25
 - [FIX]Show slider captions on mobile
 - [ADD]Suport filters for the slider/hero

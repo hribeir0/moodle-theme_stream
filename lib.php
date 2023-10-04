@@ -87,12 +87,20 @@ function theme_stream_get_pre_scss($theme) {
         'modiconcolorcommunication' => ['communication'],
         'modiconcolorcontent' => ['content'],
         'modiconcolorinterface' => ['interface'],
-        'homepageheroopacity0' => ['slider0-opacity'],
-        'homepageheroopacity1' => ['slider1-opacity'],
-        'homepageheroopacity2' => ['slider2-opacity'],
-        'homepageheroopacity3' => ['slider3-opacity'],
-        'homepageheroopacity4' => ['slider4-opacity'],
     ];
+
+    // Deal with slides opacity.
+    $slidesmaxtotal = 4;
+    $i = 0;
+    while ($i <= $slidesmaxtotal) {
+        // Pushes to the array.
+        $configurable ['homepageheroopacity'.$i] = ['slideropacity'.$i];
+        // If the setting is empty we set a default value to compile scss.
+        if ( get_config('theme_stream', 'homepageheroopacity'.$i) == null) {
+            set_config('homepageheroopacity'.$i, 0.5, 'theme_stream');
+        }
+        $i++;
+    }
 
     // Prepend variables first.
     foreach ($configurable as $configkey => $targets) {
