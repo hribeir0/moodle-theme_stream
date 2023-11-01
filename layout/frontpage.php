@@ -31,9 +31,6 @@ require_once($CFG->dirroot . '/course/lib.php');
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
-
 if (isloggedin()) {
     $courseindexopen = (get_user_preferences('drawer-open-index', true) == true);
     $blockdraweropen = (get_user_preferences('drawer-open-block') == true);
@@ -42,7 +39,7 @@ if (isloggedin()) {
     $blockdraweropen = false;
 }
 
-if (defined('BEHAT_SITE_RUNNING')) {
+if (defined('BEHAT_SITE_RUNNING') && get_user_preferences('behat_keep_drawer_closed') != 1) {
     $blockdraweropen = true;
 }
 
@@ -164,6 +161,11 @@ $promodata = [
 ];
 $templatecontext = array_merge($templatecontext, $promodata);
 
+// Loads backtotop button.
+$backtotopbutton = $theme->settings->backtotopbutton;
+if ($backtotopbutton) {
+    $PAGE->requires->js_call_amd('theme_stream/backtotop', 'init');
+}
 
 // Featured courses Widget.
 if ($theme->settings->featuredcourseswidget) {

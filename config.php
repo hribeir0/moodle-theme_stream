@@ -28,13 +28,13 @@ $THEME->name = 'stream';
 
 $THEME->doctype = 'html5';
 
-$THEME->parents = array(
+$THEME->parents = [
     'boost',
-);
+];
 
-$THEME->sheets = array(
+$THEME->sheets = [
     'sheet',
-);
+];
 
 // Disables navigation and admin blocks.
 $THEME->requiredblocks = '';
@@ -60,7 +60,7 @@ $THEME->extrascsscallback = 'theme_stream_get_extra_scss';
 
 // On M4.0 sets if should repeat MODs title.
 $THEME->activityheaderconfig = [
-    'notitle' => true
+    'notitle' => true,
 ];
 
 // Remove main menu nodes given the theme settings.
@@ -69,30 +69,30 @@ $THEME->removedprimarynavitems = explode("," , get_config('theme_stream', 'hidep
 // Used layouts.
 $THEME->layouts = [
     // Main course page.
-    'course' => array(
+    'course' => [
         'file' => 'course.php',
-        'regions' => array('side-pre', 'topblock'),
+        'regions' => ['side-pre', 'topblock'],
         'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true),
-    ),
+        'options' => ['langmenu' => true],
+    ],
     // Login page.
-    'login' => array(
+    'login' => [
         'file' => 'login.php',
-        'regions' => array(),
-        'defaultregion' => array(),
-        'options' => array('langmenu' => true),
-    ),
+        'regions' => [],
+        'defaultregion' => [],
+        'options' => ['langmenu' => true],
+    ],
     // Front page.
-    'frontpage' => array(
+    'frontpage' => [
         'file' => 'frontpage.php',
-        'regions' => array('topblock'),
+        'regions' => ['topblock'],
         'defaultregion' => 'topblock',
-        'options' => array('langmenu' => true),
-    ),
+        'options' => ['langmenu' => true],
+    ],
     // Standard layout with blocks.
-    'standard' => array(
+    'standard' => [
         'file' => 'drawers.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-    ),
+    ],
 ];

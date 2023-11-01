@@ -48,7 +48,7 @@ $page->add($setting);
 $choices = [
     0 => 'No extra info',
     'fullname' => 'Fullname',
-    'shortname' => 'Shortname'
+    'shortname' => 'Shortname',
 ];
 $name = 'theme_stream/courseindexheading';
 $title = get_string('courseindexheading', 'theme_stream');
@@ -62,7 +62,7 @@ $name = 'theme_stream/courseheaderimg';
 $title = get_string('courseheaderimg', 'theme_stream');
 $description = get_string('courseheaderimg_desc', 'theme_stream');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'courseheaderimg', 0,
-array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+['maxfiles' => 1, 'accepted_types' => 'web_image']);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

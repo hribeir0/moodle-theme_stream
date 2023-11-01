@@ -40,7 +40,7 @@ $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
-    'loginimg' => $loginimage
+    'loginimg' => $loginimage,
 ];
 
 $PAGE->requires->js_call_amd('theme_stream/togglepassword', 'init');

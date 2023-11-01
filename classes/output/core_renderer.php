@@ -58,7 +58,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 );
         }
 
-        $output = \html_writer::span($bodynotifications, 'notifications', array('id' => 'user-notifications'));
+        $output = \html_writer::span($bodynotifications, 'notifications', ['id' => 'user-notifications']);
         // Prints course visibility warning - Start. If hidden and in course main page hribeiro July 2022.
         $layout = ($this->page->pagelayout);
         if ($this->page->course->visible == 0 && $layout == "course") {
@@ -203,7 +203,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @param string|array $additionalclasses Any additional classes to give the body tag,
      * @return string
      */
-    public function body_attributes($additionalclasses = array()) {
+    public function body_attributes($additionalclasses = []) {
         global $CFG;
 
         if (!is_array($additionalclasses)) {

@@ -85,7 +85,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('favicon', 'theme_stream');
     $description = get_string('favicon_desc', 'theme_stream');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon', 0,
-    array('maxfiles' => 1, 'accepted_types' => array('.ico', '.png' )));
+    ['maxfiles' => 1, 'accepted_types' => ['.ico', '.png' ]]);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -94,7 +94,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('loginimg', 'theme_stream');
     $description = get_string('loginimg_desc', 'theme_stream');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginimg', 0,
-    array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+    ['maxfiles' => 1, 'accepted_types' => 'web_image']);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

@@ -34,10 +34,10 @@
  * @param array $options
  * @return bool
  */
-function theme_stream_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_stream_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
     // Settings fileareas. Any new uploadsetting filearea should be added to array.
     $uploadsettings = ['loginimg', 'homepagepromoboximage', 'favicon', 'catwidgetimage', 'coursecardimage', 'courseheaderimg',
-    'homepageheroimage0', 'homepageheroimage1', 'homepageheroimage2', 'homepageheroimage3', 'homepageheroimage4'];
+    'homepageheroimage0', 'homepageheroimage1', 'homepageheroimage2', 'homepageheroimage3', 'homepageheroimage4',];
 
     if ($context->contextlevel == CONTEXT_SYSTEM && in_array($filearea, $uploadsettings)) {
         $theme = theme_config::load('stream');

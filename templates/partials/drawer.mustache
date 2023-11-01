@@ -15,14 +15,14 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_boost/drawer
+    @template theme_stream/partials/drawer
 
     Example context (json):
     {
         "drawerclasses": "drawer drawer-right",
         "drawertrigger": "toggleblocks",
         "tooltipplacement": "right",
-        "drawerconent": "Content for the blocks region",
+        "drawercontent": "Content for the blocks region",
         "closebuttontext": "Close drawer",
         "id": "5"
     }
@@ -37,7 +37,6 @@
     }} data-close-on-resize="{{$drawercloseonresize}}0{{/drawercloseonresize}}"{{!
     }}>
     <div class="drawerheader">
-        <span class="p-4 courseindexheading">{{courseindexheading}}</span>
         <button
             class="btn drawertoggle icon-no-margin hidden"
             data-toggler="drawers"
@@ -49,6 +48,10 @@
         >
             {{#pix}} e/cancel, core {{/pix}}
         </button>
+        <span class="p-4 courseindexheading">{{courseindexheading}}</span>
+        <div class="drawerheadercontent hidden">
+            {{$drawerheadercontent}}{{/drawerheadercontent}}
+        </div>
     </div>
     <div class="drawercontent drag-container" data-usertour="scroller">
         {{$drawercontent}}{{/drawercontent}}

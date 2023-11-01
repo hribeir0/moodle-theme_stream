@@ -1,12 +1,3 @@
-// Fixes manual completion after adding div and class on activity_info.mustache
-@media (min-width: 768px) {
-    .activity-item .manual-completion {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-bottom: 5px;
-    }
-}
 // Course index section spacing
 .drawer-left {
     .drawerheader {
@@ -15,8 +6,7 @@
             font-weight: bold;
         }
         .drawertoggle {
-            position: absolute;
-            right: 0;
+            margin-right: 0;
         }
     }
     .drawercontent {
@@ -44,5 +34,15 @@
 @media (max-width: 768px) {
     .bulkenabled .course-content {
         margin-left: 1.2rem;
+    }
+}
+
+// Resize icons.
+.activityiconcontainer.smaller {
+    width: 37px;
+    height: 37px;
+    .activityicon {
+        width: 20px;
+        height: 20px;
     }
 }

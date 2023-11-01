@@ -31,13 +31,13 @@ $page = new admin_settingpage ('theme_stream_frontpage', get_string('frontpagest
 $page->add(new admin_setting_heading('theme_stream/slidersettingheading', get_string('slidersettingheading', 'theme_stream'), ''));
 
 // Slider slots.
-$choices = array(
+$choices = [
     '1' => '1',
     '2' => '2',
     '3' => '3',
     '4' => '4',
-    '5' => '5'
-);
+    '5' => '5',
+];
 $name = 'theme_stream/slidestotal';
 $title = get_string('slidestotal', 'theme_stream');
 $description = get_string('slidestotal_desc', 'theme_stream');
@@ -88,7 +88,7 @@ while ($i < $slidestotal ) {
     $description = get_string('homepageheroimage_desc', 'theme_stream');
     $filearea = 'homepageheroimage' . $i;
     $setting = new admin_setting_configstoredfile($name, $title, $description, $filearea, 0,
-    array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+    ['maxfiles' => 1, 'accepted_types' => 'web_image']);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -133,7 +133,7 @@ $choices = \core_course_category::make_categories_list();
 $name = 'theme_stream/choosencats';
 $title = get_string('choosencats', 'theme_stream');
 $description = get_string('choosencats_desc', 'theme_stream');
-$args = array('multiple' => true, 'manageurl' => false);
+$args = ['multiple' => true, 'manageurl' => false];
 $setting = new \core_admin\local\settings\autocomplete($name, $title, $description, null , $choices, $args);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $settings->hide_if('theme_stream/choosencats', 'theme_stream/catwidget', 'notchecked');
@@ -185,7 +185,7 @@ $name = 'theme_stream/catwidgetimage';
 $title = get_string('catwidgetimage', 'theme_stream');
 $description = get_string('catwidgetimage_desc', 'theme_stream');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'catwidgetimage', 0,
-array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+['maxfiles' => 1, 'accepted_types' => 'web_image']);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $settings->hide_if('theme_stream/catwidgetimage', 'theme_stream/catwidget', 'notchecked');
 $page->add($setting);
@@ -248,7 +248,7 @@ $name = 'theme_stream/homepagepromoboximage';
 $title = get_string('homepagepromoboximage', 'theme_stream');
 $description = get_string('homepagepromoboximage_desc', 'theme_stream');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'homepagepromoboximage', 0,
-array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+['maxfiles' => 1, 'accepted_types' => 'web_image']);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $settings->hide_if('theme_stream/homepagepromoboximage', 'theme_stream/homepagepromoboxwidget', 'notchecked');
 $page->add($setting);
@@ -288,7 +288,7 @@ $name = 'theme_stream/coursecardimage';
 $title = get_string('coursecardimage', 'theme_stream');
 $description = get_string('coursecardimage_desc', 'theme_stream');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'coursecardimage', 0,
-array('maxfiles' => 1, 'accepted_types' => 'web_image'));
+['maxfiles' => 1, 'accepted_types' => 'web_image']);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $settings->hide_if('theme_stream/coursecardimage', 'theme_stream/featuredcourseswidget', 'notchecked');
 $page->add($setting);
@@ -302,7 +302,7 @@ $choices = [
     '6' => '6',
     '9' => '9',
     '12' => '12',
-    '15' => '15'
+    '15' => '15',
 ];
 $setting = new admin_setting_configselect($name, $title, $description , '6', $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');

@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.3 - 2023-10-26
+- Moodle 4.3 version compability
+
 ## Version 1.2.2 - 2023-10-04
 - [FIX]Slider bug when no opacity is set for all slider slots
 

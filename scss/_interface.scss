@@ -127,7 +127,7 @@ footer {
         width: 100%;
         height: 30px; /* Set the fixed height of the footer here */
         line-height: 30px; /* Vertically center the text there */
-        background-color: #000000;
+        background-color: #000;
         color: $gray-300;
     }
 }
@@ -207,18 +207,18 @@ header {
 // Back to top button.
 
 #back-to-top {
-    /* Hide the back to top icon initially. It will be unhidden by JS only. */
+    /* TODO: Hide the back to top icon initially. It will be unhidden by JS only. */
     display: none;
     /* Place the back to top button at a fixed place. */
     position: fixed;
-    right: 2rem;
+    right: 5rem;
     /* As a start = on really small screens, the back to top button is shown in the bottom right corner. */
     bottom: 2rem;
 
     /* On larger screens, there is the footer button already in the bottom right corner and
        the back to top button has to be shown above of the footer button. */
     @include media-breakpoint-up(sm) {
-        bottom: 5rem;
+        bottom: 2rem;
     }
 
     /* Make sure that the back to top button is not covered by anything else. */
@@ -234,12 +234,12 @@ header {
 #page.drawers {
     &.show-drawer-right #back-to-top {
         /* Move the back to top button when right drawer is shown. */
-        right: calc(#{$drawer-right-width} + 2rem);
+        right: calc(#{$drawer-right-width} + 5rem);
     }
 }
 // When there's a sticky footer.
 .hasstickyfooter #back-to-top {
-    bottom: calc(5rem + 5rem);
+    bottom: calc(2rem + 5rem);
 }
 
 // Corrects letters pagination.
@@ -250,14 +250,6 @@ header {
 
 /****************************Frontpage****/
 #page.homepage {
-    scrollbar-width: thin;
-    scrollbar-color: #6a737b #f8f9fa;
-    position: relative;
-    overflow-y: auto;
-    transition: 0.2s;
-    height: calc(100vh - 60px);
-    left: 0;
-    right: 0;
     .main-carousel {
         img {
             object-fit: cover;

@@ -16,88 +16,43 @@
 /**
  * Theme Stream - JS code back to top button
  *
- * @module     theme_stream/backtotopbutton
+ * @module     theme_stream/backtotop
  * @copyright  Based on Theme Boost Union
  * @copyright  2022 Moodle an Hochschulen e.V. <kontakt@moodle-an-hochschulen.de>
  * @copyright  based on code from theme_boost_campus by Kathrin Osswald.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- define(['jquery', 'core/str', 'core/notification'], function($, str, Notification) {
-    "use strict";
+const Selectors = {
+    actions: {
+        backToTop: '[data-action="theme_stream/top"]',
+    },
+};
 
-    // Remember if the back to top button is shown currently.
-    let buttonShown = false;
+// Get the button because the data-action doesn't work to add classes.
+let backToTop = document.getElementById("back-to-top");
 
-    /**
-     * Initializing.
-     */
-    function initBackToTop() {
-        // Get the string backtotop from language file.
-        let stringsPromise = str.get_string('backtotopbutton', 'theme_stream');
-
-        // If the string has arrived, add backtotop button to DOM and add scroll and click handlers.
-        $.when(stringsPromise).then(function(string) {
-            // Add a fontawesome icon after the footer as the back to top button.
-            $('#page-footer').after('<button id="back-to-top" ' +
-                    'class="btn btn-icon bg-secondary icon-no-margin d-print-none"' +
-                    'aria-label="' + string + '">' +
-                    '<i aria-hidden="true" class="fa fa-chevron-up fa-fw "></i></button>');
-
-            // This function fades the button in when the page is scrolled down or fades it out
-            // if the user is at the top of the page again.
-            // Please note that Boost in Moodle 4.0 does not scroll the window object / whole body tag anymore,
-            // it scrolls the #page element instead.
-            $('#page').on('scroll', function() {
-                if ($('#page').scrollTop() > 220) {
-                    checkAndShow();
-                } else {
-                    checkAndHide();
-                }
-            });
-
-            // This function scrolls the page to top with a duration of 500ms.
-            $('#back-to-top').on('click', function(event) {
-                event.preventDefault();
-                $('#page').animate({scrollTop: 0}, 500);
-                $('#back-to-top').blur();
-            });
-
-            return true;
-        }).fail(Notification.exception);
+/**
+* Show or hide back to top button.
+*
+*/
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTop.style.display ="inline-block";
+  } else {
+        backToTop.style.display = "none";
     }
+}
 
-    /**
-     * Helper function to handle the button visibility when the page is scrolling up.
-     */
-    function checkAndHide() {
-        // Check if the button is still shown.
-        if (buttonShown === true) {
-            // Fade it out and remember the status in the end.
-            // To be precise, the faceOut() function will be called multiple times as buttonShown is not set until the button is
-            // really faded out. However, as soon as it is faded out, it won't be called until the button is shown again.
-            $('#back-to-top').fadeOut(100, function() {
-                buttonShown = false;
-            });
-        }
-    }
-
-    /**
-     * Helper function to handle the button visibility when the page is scrolling down.
-     */
-    function checkAndShow() {
-        // Check if the button is not yet shown.
-        if (buttonShown === false) {
-            // Fade it in and remember the status in the end.
-            $('#back-to-top').fadeIn(300, function() {
-                buttonShown = true;
-            });
-        }
-    }
-
-    return {
-        init: function() {
-            initBackToTop();
-        }
+export const init = () => {
+    // When there's scrolling we fire the function.
+    window.onscroll = function() {
+        scrollFunction();
     };
-});
+    document.addEventListener('click', e => {
+        if (e.target.closest(Selectors.actions.backToTop)) {
+            document.body.scrollTo({top: 0, behavior: 'smooth'});
+            document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    });
+};

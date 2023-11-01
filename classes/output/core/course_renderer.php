@@ -52,10 +52,10 @@ class course_renderer extends \core_course_renderer {
             // Adds a new icon.
             $data->prevlink->text = '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> ' .$prevlink;
             // Tooltip data.
-            $data->prevlink->attributes = array(
-                array('name' => 'data-toggle', 'value' => 'tooltip'),
-                array('name' => 'title', 'value' => $prevoriginal)
-            );
+            $data->prevlink->attributes = [
+                ['name' => 'data-toggle', 'value' => 'tooltip'],
+                ['name' => 'title', 'value' => $prevoriginal],
+            ];
         }
 
         if (isset($data->nextlink)) {
@@ -68,10 +68,10 @@ class course_renderer extends \core_course_renderer {
             // Adds a new icon.
             $data->nextlink->text = '<i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ' .$nextlink;
             // Tooltip data.
-            $data->nextlink->attributes = array(
-                array('name' => 'data-toggle', 'value' => 'tooltip'),
-                array('name' => 'title', 'value' => $nextoriginal)
-            );
+            $data->nextlink->attributes = [
+                ['name' => 'data-toggle', 'value' => 'tooltip'],
+                ['name' => 'title', 'value' => $nextoriginal],
+            ];
         }
         return $this->output->render_from_template('core_course/activity_navigation', $data);
     }
