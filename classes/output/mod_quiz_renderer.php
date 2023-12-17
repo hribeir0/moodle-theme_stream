@@ -33,7 +33,7 @@ use html_writer;
  * @copyright  2023 Hugo Ribeiro <ribeiro.hugo@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class mod_quiz_renderer extends \mod_quiz\output\renderer {
+class mod_quiz_renderer extends \mod_quiz_renderer {
     /**
      * Remove back button while taking a quiz
      *
