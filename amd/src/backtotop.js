@@ -32,13 +32,13 @@ const Selectors = {
 // Get the button because the data-action doesn't work to add classes.
 let backToTop = document.getElementById("back-to-top");
 
-/**
-* Show or hide back to top button.
-*
-*/
+ /**
+ * Show or hide back to top button.
+ *
+ */
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTop.style.display ="inline-block";
+        backToTop.style.display = "inline-block";
   } else {
         backToTop.style.display = "none";
     }

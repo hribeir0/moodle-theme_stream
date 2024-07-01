@@ -196,39 +196,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
     /**
-     * Returns HTML attributes to use within the body tag. This includes an ID and classes.
-     * Returns admin menu in the header. hribeir0
-     *
-     * @since Moodle 2.5.1 2.6
-     * @param string|array $additionalclasses Any additional classes to give the body tag,
-     * @return string
-     */
-    public function body_attributes($additionalclasses = []) {
-        global $CFG;
-
-        if (!is_array($additionalclasses)) {
-            $additionalclasses = explode(' ', $additionalclasses);
-        }
-
-        $systemcontext = \context_system::instance();
-        // Allowed to create users.
-        $manager = has_capability('moodle/user:create', $systemcontext);
-        // Quick menu nodes and URLs.
-        $quickmenu = get_string('management', 'theme_stream') . PHP_EOL;
-        $quickmenu .= '-'. get_string('managecourses', 'theme_stream') .'|/course/management.php'. PHP_EOL;
-        $quickmenu .= '-'. get_string('searchcourses', 'theme_stream') .'|/course'. PHP_EOL;
-        $quickmenu .= '-###'. PHP_EOL;
-        $quickmenu .= '-'. get_string('searchusers', 'theme_stream') .'|/admin/user.php'. PHP_EOL;
-        $quickmenu .= '-###'. PHP_EOL;
-        $quickmenu .= '-'. get_string('themesettings', 'admin') .'|/admin/settings.php?section=themesettingstream'. PHP_EOL;
-
-        // Prints a quick menu for some users by using the custommenuitems feature.
-        if ($manager) {
-            $CFG->custommenuitems .= $quickmenu;
-        }
-        return ' id="'. $this->body_id().'" class="'.$this->body_css_classes($additionalclasses).'"';
-    }
-    /**
      * Reads external_fonts to use print them in head.mustache
      * hribeiro 2023
      * @return string

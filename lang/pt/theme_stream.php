@@ -26,6 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Stream';
+$string['manageusers'] = 'Gerir utilizadores';
 $string['choosereadme'] = 'Tema Stream';
 $string['hiddencourse'] = 'Este curso está oculto para estudantes.';
 $string['frontendby'] = 'Através do tema Stream';
@@ -33,6 +34,7 @@ $string['generalsettings'] = 'Configurações gerais';
 $string['courseheaderimg'] = 'Imagem standard de cabeçalho';
 $string['courseheaderimg_desc'] = 'Imagem comum para ser usada nos cabeçalhos dos cursos caso não exista uma particular no contexto do curso';
 $string['footersettings'] = 'Conteúdo para rodapé';
+$string['themesettings'] = 'Configurações do tema';
 $string['socialmedia'] = 'Redes Sociais';
 $string['facebookurl'] = 'Endereço Facebook';
 $string['instagramurl'] = 'Endereço Instagram';

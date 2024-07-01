@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,23 +12,23 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Hook callbacks for Stream
  *
- * @package     theme_stream
- * @copyright   2022 Hugo Ribeiro <ribeiro.hugo@gmail.com>
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ * @package    theme_stream
+ * @copyright  2024 Hugo Ribeiro <hugo@moodlar.pt>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'theme_stream';
-$plugin->release = '1.4';
-$plugin->version = 2024070101;
-$plugin->requires = 2024041900;
-$plugin->maturity = MATURITY_RC;
-$plugin->dependencies = [
-    'theme_boost' => 2022041900,
+$callbacks = [
+
+    [
+        'hook' => core\hook\navigation\primary_extend::class,
+        'callback' => 'theme_stream\local\hooks\navigation\primary_extend::callback',
+        'priority' => 0,
+    ],
 ];

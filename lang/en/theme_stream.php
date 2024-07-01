@@ -25,6 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['manageusers'] = 'Manage users';
 $string['pluginname'] = 'Stream';
 $string['choosereadme'] = 'Stream theme';
 $string['hiddencourse'] = 'This course is hidden from students.';
@@ -38,6 +39,7 @@ $string['socialmedia'] = 'Social Media';
 $string['facebookurl'] = 'Facebook URL';
 $string['instagramurl'] = 'Instagram URL';
 $string['pinteresturl'] = 'Pinterest URL';
+$string['themesettings'] = 'Theme settings';
 $string['youtubeurl'] = 'Youtube URL';
 $string['linkedinurl'] = 'Linkedin URL';
 $string['twitterurl'] = 'Twitter URL';
@@ -75,7 +77,8 @@ $string['showcoursescount_desc'] = 'If set, show the total number of courses in 
 $string['maxcatnumber'] = 'Max categories to show';
 $string['maxcatnumber_desc'] = 'Max number of categories we should show in the widget; Your query will be limited to this.';
 $string['catwidgetimage'] = 'Category card image';
-$string['catwidgetimage_desc'] = 'You can choose a defaut image to be showed if a givencategory is missing images from the courses. This image will be repeated if there more than one category missing images.';
+$string['catwidgetimage_desc'] = 'You can choose a default image to be showed if a givencategory is missing images from the courses.
+This image will be repeated if there are more than one category missing images.';
 $string['bunnyfonts'] = 'External font to use';
 $string['bunnyfonts_desc'] = 'Select which Bunny Font to use. This service is EU based and doesn\'t store any data. More info: https://bunny.net/fonts/';
 $string['externalfonts'] = 'External fonts';

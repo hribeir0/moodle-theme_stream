@@ -68,7 +68,6 @@ if ($ADMIN->fulltree) {
         'Nunito' => 'Nunito',
         'Montserrat' => 'Montserrat',
         'Lato' => 'Lato',
-        'Montserrat' => 'Montserrat',
         'Poppins' => 'Poppins',
         'Oswald' => 'Oswald',
         'Mukta' => 'Mukta',

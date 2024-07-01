@@ -37,7 +37,7 @@
 function theme_stream_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
     // Settings fileareas. Any new uploadsetting filearea should be added to array.
     $uploadsettings = ['loginimg', 'homepagepromoboximage', 'favicon', 'catwidgetimage', 'coursecardimage', 'courseheaderimg',
-    'homepageheroimage0', 'homepageheroimage1', 'homepageheroimage2', 'homepageheroimage3', 'homepageheroimage4',];
+    'homepageheroimage0', 'homepageheroimage1', 'homepageheroimage2', 'homepageheroimage3', 'homepageheroimage4', ];
 
     if ($context->contextlevel == CONTEXT_SYSTEM && in_array($filearea, $uploadsettings)) {
         $theme = theme_config::load('stream');
@@ -94,7 +94,7 @@ function theme_stream_get_pre_scss($theme) {
     $i = 0;
     while ($i <= $slidesmaxtotal) {
         // Pushes to the array.
-        $configurable ['homepageheroopacity'.$i] = ['slideropacity'.$i];
+        $configurable['homepageheroopacity'.$i] = ['slideropacity'.$i];
         // If the setting is empty we set a default value to compile scss.
         if ( get_config('theme_stream', 'homepageheroopacity'.$i) == null) {
             set_config('homepageheroopacity'.$i, 0.5, 'theme_stream');

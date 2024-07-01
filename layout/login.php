@@ -43,6 +43,5 @@ $templatecontext = [
     'loginimg' => $loginimage,
 ];
 
-$PAGE->requires->js_call_amd('theme_stream/togglepassword', 'init');
 echo $OUTPUT->render_from_template('theme_stream/login', $templatecontext);
 

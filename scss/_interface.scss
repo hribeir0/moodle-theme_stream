@@ -102,20 +102,15 @@ footer {
         background-color: $white;
     }
     #login {
-        input,
-        button {
+        input[name=username] {
             width: 100%;
         }
     }
-    // Toogle password icon position.
-    .login-form-password {
-        position: relative;
-        .fa {
-            position: absolute;
-            right: 0.5rem;
-            top: 0.7rem;
-            cursor: pointer;
-        }
+    #loginbtn {
+        width: 100%;
+    }
+    .login-form-forgotpassword {
+        text-align: center;
     }
     .login-image img {
         object-fit: cover;
@@ -194,14 +189,6 @@ header {
             color: $gray-300;
         }
 
-    }
-}
-// Fixes courses deck width on the dashboard and my courses.
-.dashboard-card-deck:not(.fixed-width-cards) {
-    @media (min-width: 840px) {
-        .dashboard-card {
-            width: calc(25% - #{$card-gutter});
-        }
     }
 }
 // Back to top button.
