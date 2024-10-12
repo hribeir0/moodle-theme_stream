@@ -25,10 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_stream';
-$plugin->release = '1.4';
-$plugin->version = 2024070101;
-$plugin->requires = 2024041900;
+$plugin->release = '1.5';
+$plugin->version = 2024101201;
+$plugin->requires = 2024100700;
 $plugin->maturity = MATURITY_RC;
 $plugin->dependencies = [
-    'theme_boost' => 2022041900,
+    'theme_boost' => 2024100700,
 ];

@@ -226,7 +226,7 @@ header {
 }
 // When there's a sticky footer.
 .hasstickyfooter #back-to-top {
-    bottom: calc(2rem + 5rem);
+    bottom: calc(#{$stickyfooter-height} + 1rem);
 }
 
 // Corrects letters pagination.
@@ -374,5 +374,13 @@ header {
                 color: $gray-800;
             }
         }
+    }
+}
+// Navbar
+// Reduce notification counter
+.navbar {
+    .count-container {
+        font-size: 9px;
+        line-height: 9px;
     }
 }
