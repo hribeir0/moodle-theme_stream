@@ -384,3 +384,24 @@ header {
         line-height: 9px;
     }
 }
+
+
+// Sticky secondary-menu
+$isticky: 0 !default;
+.secondary-navigation {
+    @if $isticky == 1{
+        position: sticky;
+        top: 50px;  /* Sticks to the top of the viewport */
+        z-index: 1000;  /* Ensures it stays above other content */
+        background-color: #fff;
+    }
+    .navigation {
+        background-color: #f8f9fa;
+        border-bottom:none;
+    }
+    .moremenu .nav-tabs{
+        background-color: #f8f9fa;
+    }
+}
+// Fix drawerhead.
+.drawer.scrolled .drawerheader {box-shadow: none;}

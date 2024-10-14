@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 1.5.1 - 2024-10-13
+- [ADD]Sticky secondary navigation menu
+
+## Version 1.5 - 2024-10-12
+- Moodle 4.5 version compatibility
+
+## Version 1.4
+- Moodle 4.4 version compatibility
+
 ## Version 1.3 - 2023-10-26
 - Moodle 4.3 version compability
 

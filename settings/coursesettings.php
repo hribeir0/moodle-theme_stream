@@ -28,6 +28,14 @@ defined('MOODLE_INTERNAL') || die();
 // Course tab.
 $page = new admin_settingpage ('theme_stream_course', get_string('coursesettings', 'backup'));
 
+// Sticky secondary navigation.
+$name = 'theme_stream/stickynav';
+$title = get_string('stickynav', 'theme_stream');
+$description = get_string('stickynav_desc', 'theme_stream');
+$setting = new admin_setting_configcheckbox($name, $title, $description, '1');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Show circle mod icons on the course page and activitychooser.
 $name = 'theme_stream/circlemodicons';
 $title = get_string('circlemodicons', 'theme_stream');

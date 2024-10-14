@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_stream';
-$plugin->release = '1.5';
-$plugin->version = 2024101201;
+$plugin->release = '1.5.1';
+$plugin->version = 2024101300;
 $plugin->requires = 2024100700;
 $plugin->maturity = MATURITY_RC;
 $plugin->dependencies = [

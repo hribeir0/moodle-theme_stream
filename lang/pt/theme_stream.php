@@ -164,6 +164,8 @@ $string['slidestotal_desc'] = 'Escolha aqui o número de itens que quer apresent
 $string['prev'] = 'Anterior';
 $string['next'] = 'Seguinte';
 $string['jumptoslide'] = 'Ir para slide';
+$string['stickynav'] = 'Menu secundário fixo';
+$string['stickynav_desc'] = 'Fixa o menu secundário horizontal para que esteja sempre acessível.';
 // Privacy API.
 $string['privacy:metadata'] = 'O tema Stream não guarda qualquer dado pessoal sobre qualquer utilizador.';
 $string['homepageheroopacity'] = 'Opacidade sobre a foto';

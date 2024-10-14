@@ -13,7 +13,7 @@ $circlemodicons: 0 !default;
 // Activity icons path.
 $strongicons: 0 !default;
 
-@if $strongicons == 1 {
+@if $strongicons != 1 {
     @each $type, $value in $activity-icon-colors {
         .activityiconcontainer.#{$type} {
             background-color: $value;

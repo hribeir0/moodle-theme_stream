@@ -19,6 +19,7 @@ The usual workflow. Please set up available options for a better end result. In 
 - Homepage Main Slider (up to 5 slides)
 - Social media support (Facebook, Youtube, Instagram, Linkedin, Pinterest, Twitter)
 - Full Width or narrow (like Boost)
+- Sticky secondary navigation menu
 - Ability to add blocks before main content on the course page (check my course presentation block) and homepage
 - Course header image from the course setting (defaults to theme image)
 - Course completion in the course header

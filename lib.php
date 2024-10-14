@@ -71,6 +71,7 @@ function theme_stream_get_main_scss_content() {
  */
 function theme_stream_get_pre_scss($theme) {
     $scss = '';
+
     $configurable = [
         // Config key => [variableName, ...].
         // Array with all the settings and SCSS variables to define.
@@ -87,6 +88,7 @@ function theme_stream_get_pre_scss($theme) {
         'modiconcolorcommunication' => ['communication'],
         'modiconcolorcontent' => ['content'],
         'modiconcolorinterface' => ['interface'],
+        'stickynav' => ['isticky'],
     ];
 
     // Deal with slides opacity.
