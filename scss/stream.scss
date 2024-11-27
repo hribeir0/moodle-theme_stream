@@ -29,14 +29,6 @@ $warning:       $orange !default;
 $danger:        $red !default;
 $secondary:     #298976 !default; //$gray-400 !default;
 
-// Activity icons variables.
-$administration:    #5d63f6 !default;
-$assessment:        #eb66a2 !default;
-$collaboration:     #f7634d !default;
-$communication:     #11a676 !default;
-$content:           #399be2 !default;
-$interface:         #a378ff !default;
-
 $info-outline:    #1f7e9a;
 $warning-outline: #a6670e;
 
@@ -125,20 +117,8 @@ $fullwidthpage: 0 !default;
     $course-content-maxwidth: 100%;
     $medium-content-maxwidth: $course-content-maxwidth;
 }
-
-// Activity icon colors to use with defined variables.
-$activity-icon-colors: () !default;
-$activity-icon-colors: map-merge(
-    (
-        "administration": $administration,
-        "assessment": $assessment,
-        "collaboration": $collaboration,
-        "communication": $communication,
-        "content": $content,
-        "interface": $interface,
-    ),
-    $activity-icon-colors
-);
+// Footer
+$footercolor: $gray-700 !default;
 
 // Import FontAwesome.
 @import "../../boost/scss/fontawesome.scss";
@@ -160,23 +140,6 @@ $activity-icon-colors: map-merge(
 
 // Incourse styles.
 @import "_incourse.scss";
-
-// Dynamic rules from Theme settings.
-@import "_settings.scss";
-
-// Activity icon colors to use with defined variables.
-$activity-icon-colors: () !default;
-$activity-icon-colors: map-merge(
-    (
-        "administration": $administration,
-        "assessment": $assessment,
-        "collaboration": $collaboration,
-        "communication": $communication,
-        "content": $content,
-        "interface": $interface,
-    ),
-    $activity-icon-colors
-);
 
 // Preset CSS
 

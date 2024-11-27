@@ -36,14 +36,6 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, '1');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Show circle mod icons on the course page and activitychooser.
-$name = 'theme_stream/circlemodicons';
-$title = get_string('circlemodicons', 'theme_stream');
-$description = get_string('circlemodicons_desc', 'theme_stream');
-$setting = new admin_setting_configcheckbox($name, $title, $description, '1');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
 // Show course completion on course page.
 $name = 'theme_stream/coursecompletion';
 $title = get_string('coursecompletion');
@@ -71,62 +63,6 @@ $title = get_string('courseheaderimg', 'theme_stream');
 $description = get_string('courseheaderimg_desc', 'theme_stream');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'courseheaderimg', 0,
 ['maxfiles' => 1, 'accepted_types' => 'web_image']);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icons outline.
-$name = 'theme_stream/modiconoutline';
-$title = get_string('modiconoutline', 'theme_stream');
-$description = get_string('modiconoutline_desc', 'theme_stream');
-$setting = new admin_setting_configcheckbox($name, $title, $description, '0');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'administration'.
-$name = 'theme_stream/modiconcoloradministration';
-$title = get_string('modiconcoloradministration', 'theme_stream', '', true);
-$description = get_string('modiconcoloradministration_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#5d63f6');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'assessment'.
-$name = 'theme_stream/modiconcolorassessment';
-$title = get_string('modiconcolorassessment', 'theme_stream', '', true);
-$description = get_string('modiconcolorassessment_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#eb66a2');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'collaboration'.
-$name = 'theme_stream/modiconcolorcollaboration';
-$title = get_string('modiconcolorcollaboration', 'theme_stream', '', true);
-$description = get_string('modiconcolorcollaboration_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#f7634d');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'communication'.
-$name = 'theme_stream/modiconcolorcommunication';
-$title = get_string('modiconcolorcommunication', 'theme_stream', '', true);
-$description = get_string('modiconcolorcommunication_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#11a676');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'content'.
-$name = 'theme_stream/modiconcolorcontent';
-$title = get_string('modiconcolorcontent', 'theme_stream', '', true);
-$description = get_string('modiconcolorcontent_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#399be2');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Mod icon color for 'interface'.
-$name = 'theme_stream/modiconcolorinterface';
-$title = get_string('modiconcolorinterface', 'theme_stream', '', true);
-$description = get_string('modiconcolorinterface_desc', 'theme_stream', '', true);
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#a378ff');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

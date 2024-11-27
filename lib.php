@@ -80,15 +80,8 @@ function theme_stream_get_pre_scss($theme) {
         'secondarycolour' => ['secondary'],
         'fullwidthpage' => ['fullwidthpage'],
         'bunnyfonts' => ['sitefont'],
-        'circlemodicons' => ['circlemodicons'],
-        'modiconoutline' => ['strongicons'],
-        'modiconcoloradministration' => ['administration'],
-        'modiconcolorassessment' => ['assessment'],
-        'modiconcolorcollaboration' => ['collaboration'],
-        'modiconcolorcommunication' => ['communication'],
-        'modiconcolorcontent' => ['content'],
-        'modiconcolorinterface' => ['interface'],
         'stickynav' => ['isticky'],
+        'footercolor' => ['footercolor'],
     ];
 
     // Deal with slides opacity.

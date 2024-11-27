@@ -25,6 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['footercolor'] = 'Big footer color';
+$string['footercolor_desc'] = 'Main footer background color';
 $string['manageusers'] = 'Manage users';
 $string['pluginname'] = 'Stream';
 $string['choosereadme'] = 'Stream theme';
@@ -94,8 +96,7 @@ $string['noresults'] = 'Found no results';
 $string['hideprimarynodes'] = 'Hide primary menu nodes';
 $string['hideprimarynodes_desc'] = 'One can choose which options should be removed from the first level menu';
 $string['stream:changesettings'] = 'Capability to allow non admin users to change theme settings.';
-$string['circlemodicons'] = 'Circle icons';
-$string['circlemodicons_desc'] = 'Show circle icons instead of rounded squares on the course page and on the activity chooser.';
+
 $string['herotitle'] = 'Hero image highlight';
 $string['herotitle_desc'] = 'Text to show on top of each slider image. Heading 1 title.';
 $string['heromotto'] = 'Slider motto';
@@ -147,20 +148,6 @@ $string['loginimg_desc'] = 'Login page is presented on 2 columns: login form on 
 $string['usingstreamtheme'] = 'with Stream Theme';
 $string['coursecardimage'] = 'Course card image';
 $string['coursecardimage_desc'] = 'Image to use on any course card missing one. If this happens and this setting is also empty we will look into the theme\'s default folder.';
-$string['modiconcoloradministration'] = 'Administration activities icon color';
-$string['modiconcoloradministration_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Administration\'';
-$string['modiconcolorassessment'] = 'Assessment activities icon color';
-$string['modiconcolorassessment_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Assesment\'';
-$string['modiconcolorcollaboration'] = 'Collaboration activities icon color';
-$string['modiconcolorcollaboration_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Collaboration\'';
-$string['modiconcolorcommunication'] = 'Communication activities icon color';
-$string['modiconcolorcommunication_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Communication\'';
-$string['modiconcolorcontent'] = 'Content activities icon color';
-$string['modiconcolorcontent_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Content\'';
-$string['modiconcolorinterface'] = 'Interface activities icon color';
-$string['modiconcolorinterface_desc'] = 'Choose the color you wish to use as a background for the activities classified as \'Interface\'';
-$string['modiconoutline'] = 'Icons black outline';
-$string['modiconoutline_desc'] = 'If enabled, activity icons will have a strong black outline instead of default white';
 $string['prevactivity'] = 'Previous activity';
 $string['nextactivity'] = 'Next activity';
 $string['slidersettingheading'] = 'Slider contents';

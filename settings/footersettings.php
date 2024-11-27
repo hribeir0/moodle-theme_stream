@@ -55,13 +55,21 @@ defined('MOODLE_INTERNAL') || die();
 
     $name = 'theme_stream/twitterurl';
     $title = get_string('twitterurl', 'theme_stream');
-    $setting = new admin_setting_configtext($name, $title, '' , 'https://www.twitter.com/mytwitterhandle');
+    $setting = new admin_setting_configtext($name, $title, '' , 'https://x.com/myxhandle');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     $name = 'theme_stream/youtubeurl';
     $title = get_string('youtubeurl', 'theme_stream');
     $setting = new admin_setting_configtext($name, $title, '' , 'https://www.youtube.com/myyoutubepage');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Footer color.
+    $name = 'theme_stream/footercolor';
+    $title = get_string('footercolor', 'theme_stream', '', true);
+    $description = get_string('footercolor_desc', 'theme_stream', '', true);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#495057');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

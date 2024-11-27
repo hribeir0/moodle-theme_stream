@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 1.5.2 - 2024-11-07
+- Removed mod icons customizations. Following core's mod icons.
+- Update social media icons.
+- [ADD]Footer color picker.
+
 ## Version 1.5.1 - 2024-10-13
 - [ADD]Sticky secondary navigation menu
 

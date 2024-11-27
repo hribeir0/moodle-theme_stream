@@ -54,13 +54,13 @@ footer {
 
     .stream-footer {
         padding-top: 4rem;
-        background-color: $gray-700;
+        background-color: $footercolor;
 
         .socialmedia {
             margin-top: 3rem;
             border-top: 1px solid $primary;
 
-            .fa {
+            .fa-brands {
                 padding: 20px;
                 font-size: 20px;
 
