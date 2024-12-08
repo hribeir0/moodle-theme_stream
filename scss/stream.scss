@@ -117,6 +117,12 @@ $fullwidthpage: 0 !default;
     $course-content-maxwidth: 100%;
     $medium-content-maxwidth: $course-content-maxwidth;
 }
+// Deal with opacity zero slider.
+$slideropacity0: 0 !default;
+$slideropacity1: 0 !default;
+$slideropacity2: 0 !default;
+$slideropacity3: 0 !default;
+$slideropacity4: 0 !default;
 // Footer
 $footercolor: $gray-700 !default;
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.5.3 - 2024-12-08
+- Fix slider opacity 0.
+
 ## Version 1.5.2 - 2024-11-07
 - Removed mod icons customizations. Following core's mod icons.
 - Update social media icons.
