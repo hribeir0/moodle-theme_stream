@@ -159,7 +159,7 @@ $string['jumptoslide'] = 'Go to slide';
 // Privacy API.
 $string['privacy:metadata'] = 'Stream theme does not store any personal data about any user.';
 $string['featuredcategoriessubtitle'] = 'Categories widget subtitle';
-$string['featuredcategoriessubtitle_desc'] = 'A simple text to use as subtitle for the widget. Will show nothing if setting is empy.';
+$string['featuredcategoriessubtitle_desc'] = 'A simple text to use as subtitle for the widget. Will show nothing if setting is empty.';
 // End of Privacy API.
 $string['courseindexheading'] = 'Show extra info in the course index.';
 $string['courseindexheading_desc'] = 'Show course name or shortname as heading in the course index.';
