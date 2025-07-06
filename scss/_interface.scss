@@ -55,6 +55,7 @@ footer {
     .stream-footer {
         padding-top: 4rem;
         background-color: $footercolor;
+        color: $gray-100;
 
         .socialmedia {
             margin-top: 3rem;
@@ -145,7 +146,7 @@ header {
         }
     }
     .page-context-header {
-        // Same spacing as bootstrap ml-4.
+        // Same spacing as bootstrap ms-4.
         margin-left: $spacer * 1;
         margin-top: $spacer * 1;
         padding: 5px 15px 5px 15px;
@@ -162,9 +163,6 @@ header {
             height: 60px;
             font-size: 1.6rem;
         }
-    }
-    .bulkEnable {
-        opacity: 0.8;
     }
     ol.breadcrumb {
         margin-left: $spacer * 1;

@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template core_courseformat/content/bulkedittoggler
+    @template core_courseformat/local/content/bulkedittoggler
 
     Displays the bulk actions button in the page header.
 
@@ -25,10 +25,12 @@
 }}
 <button
     id="bulk-enable-{{uniqid}}"
-    class="bulkEnable btn text-info bg-light text-nowrap"
-    data-for="enableBulk"
+    class="bulkEnable btn btn-outline-info text-nowrap"
+    data-for="enableBulk" data-coursename="{{coursename}}"
+    {{#sectiontitle}} data-sectiontitle="{{.}}" {{/sectiontitle}}
+    {{#sectionname}} data-sectionname="{{.}}" {{/sectionname}}
 >
-    {{#str}} bulkedit, core_courseformat {{/str}} {{#pix}} i/edit, core {{/pix}}
+    {{#str}} bulkedit, core_courseformat {{/str}} {{#pix}} i/bulk_edit, core {{/pix}}
 </button>
 {{#js}}
 require(['core_courseformat/local/content/bulkedittoggler'], function(component) {

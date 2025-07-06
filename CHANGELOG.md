@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.6 - 2025-07-06
+- Moodle 5.0 version compatibility
+
 ## Version 1.5.3 - 2024-12-08
 - Fix slider opacity 0.
 

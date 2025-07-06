@@ -126,6 +126,11 @@ $slideropacity4: 0 !default;
 // Footer
 $footercolor: $gray-700 !default;
 
+// Moodle v5.0 compatibility.
+// Links
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
 // Import FontAwesome.
 @import "../../boost/scss/fontawesome.scss";
 
@@ -163,6 +168,8 @@ body {
     border-radius: 50%;
 }
 
+
+
 // Reset the default styling back to the bootstrap defaults for
 // the secondary outline button because gray-200 is much too light
 // for an outline button.
@@ -178,6 +185,3 @@ body {
 .btn-outline-warning {
     @include button-outline-variant($warning-outline);
 }
-
-@include bg-variant(".bg-gray", $gray-200, true);
-

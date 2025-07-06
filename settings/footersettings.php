@@ -76,7 +76,7 @@ defined('MOODLE_INTERNAL') || die();
     // Different columns settings.
     $listalinks = '
     <h5>External links</h5>
-    <ul class="list-unstyled ml-0">
+    <ul class="list-unstyled ms-0">
         <li>Link a</li>
         <li>Link b</li>
         <li>Link c</li>

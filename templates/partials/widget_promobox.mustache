@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_stream/promobox
+    @template theme_stream/partials/widget_promobox
 
     Stream Theme Promobox partial template
 
@@ -43,7 +43,9 @@
         <div class="col-lg-5 promobox-left py-5">
             <h3 class="mb-4">{{promoboxtitle}}</h3>
             {{{promoboxtext}}}
-            <a class="btn btn-outline-primary mt-4 btn-lg btn-block" role="button" href="{{{promoboxurl}}}">{{promoboxbutton}}</a>
+            <div class="d-grid">
+                <a class="btn btn-outline-primary mt-4 btn-lg" role="button" href="{{{promoboxurl}}}">{{promoboxbutton}}</a>
+            </div>
         </div>
         <div class="col-lg-7 promobox-right">
             <img class="img-fluid" src="{{{promoboximage}}}" alt="" />

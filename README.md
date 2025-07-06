@@ -34,7 +34,7 @@ The usual workflow. Please set up available options for a better end result. In 
 
 ## Project Status
 
-On going.
+No new features are planned. It is intended to keep supporting new Moodle versions.
 
 ## Theme Translations
 
